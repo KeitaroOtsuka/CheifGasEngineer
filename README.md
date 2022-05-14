@@ -1,35 +1,24 @@
-# サービス概要
-このサービスはガス業界に従事する人々にとって必要と言われるガス主任技術者資格の取得を支えるガス主任技術者試験勉強サービスです。
-# メインのターゲットユーザー
-日本中のガス業界に従事するガス主任技術者(甲・乙)が未取得の方
-# ユーザーが抱える課題
-会社に取れと毎年言われるが、CDROMを使ったアナログな勉強方法や教科書を使って終業後に勉強するなど。
-それだけでは知識が定着しにくく結果、何年も試験に落ち続けている人もいる。
-# 解決方法
-Webアプリとして過去問の勉強場所を提供することで、場所を問わない勉強の支援やアプリ内での進捗管理を行い、試験合格を目指してもらう。
-# 実装予定の機能
-- 一般ユーザー
-  - ログイン機能
-  - 保持資格別に権限を付与する
-  - グループ機能
-  - 過去問の受験結果を分野別に見ることができる。
-  - 試験日を設定することで試験日までの日数を表示する
+# README
 
-- 管理者ユーザー
-  - 過去問の一覧、詳細、作成、編集、削除
-  - 管理ユーザーの一覧、詳細、作成、編集、削除
-  - ガス機器検査協会にて毎年発行される過去問の通知
-# なぜこのサービスを作りたいのか
-新卒で就職した大阪ガスを自己都合により１年５ヶ月で退社したが、退職する際も、社内のみなさんは自分の夢を応援してくださり、円満に退社することができた。その他にも社会人としての基礎を教えてくださった会社には大変感謝しており、何か恩返しがしたいと思い今回に至ります。
-# スケジュール
-企画〜技術調査：5/8〆切  
-README〜ER図作成：5/8 〆切  
-メイン機能実装：5/9 - 5/18  
-β版をRUNTEQ内リリース（MVP）：5/20〆切  
-本番リリース：6/10  
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-# 画面遷移図
-https://www.figma.com/file/rQnoza1ksYG0H8VE2hrPZE/%E3%82%AC%E3%82%B9%E4%B8%BB%E4%BB%BB%E6%8A%80%E8%A1%93%E8%80%85%E8%A9%A6%E9%A8%93%E9%81%93%E5%A0%B4?node-id=0%3A1
+Things you may want to cover:
 
-# ER図
-https://drive.google.com/file/d/1TpEvo2IkF84UK3gUGsmuRVoq2zRQqm4J/view?usp=sharing
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
