@@ -1,5 +1,11 @@
-<ul>
-  <li class = "footer-logo1">利用規約</li>
-  <li class = "footer-logo2">プライバシーポリシー</li>
-  <li class = "footer-logo3">お問合せ</li>
-</ul>
+<div class = "footer">
+  <ul>
+  <%= link_to page_path('terms_of_service') do %>
+    <li class = "footer-logo1">利用規約</li>
+  <% end %>
+  <%= link_to page_path('privacy_policy') do %>
+    <li class = "footer-logo2">プライバシーポリシー</li>
+  <% end %>
+    <li class = "footer-logo3">お問い合わせ</li>
+  </ul>
+</div>

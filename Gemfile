@@ -51,3 +51,6 @@ gem 'net-smtp'
 # ついでに以下の2つも追加しておく方が良さそう
 gem 'net-imap'
 gem 'net-pop'
+
+# 利用規約、プライパシーポリシー、お問合せフォームの作成
+gem 'high_voltage'

@@ -14,7 +14,27 @@
  *= require_self
  */
 
+.header {
+  height:200px;
+  background-color: #4758F1;
+}
+
+.header-left {
+  padding: 25px, 0;
+  float: left;
+}
+.header-right {
+  float: right;
+  color:white
+}
+
+.footer {
+  height: 100px;
+  background-color: #4758F1;
+}
+
 li {
   list-style: none;
   float: left;
 }
+
