@@ -1,11 +1,12 @@
 <div class = "header">
   <div class = "header-left">
     <%= link_to root_path do %>
-      <%= image_tag 'top-logo.png' %>
+      <%= image_tag 'top-logo.png', :width => '400', :height => '150' %>
     <% end %>
   </div>
   <div class = "header-right">
     <%= link_to "グループ検索", "#" %>
     <%= link_to "プロフィール", "#" %>
+    <%= link_to "ログアウト", logout_path, method: :delete %>
   </div>
 </div>
