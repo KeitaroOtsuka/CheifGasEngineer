@@ -57,3 +57,8 @@ gem 'high_voltage'
 
 # ユーザー機能周辺
 gem 'sorcery'
+
+# デザイン
+gem 'bootstrap', '~> 4.4.1'
+gem 'font-awesome-sass', '~> 5.12.0'
+gem 'jquery-rails'
