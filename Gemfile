@@ -54,3 +54,6 @@ gem 'net-pop'
 
 # 利用規約、プライパシーポリシー、お問合せフォームの作成
 gem 'high_voltage'
+
+# ユーザー機能周辺
+gem 'sorcery'
