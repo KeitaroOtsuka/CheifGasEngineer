@@ -1,10 +1,11 @@
 <h1>グループ一覧ページ</h1>
+<%= link_to "グループ作成", new_group_path %>
 <div class="container pt-3">
   <div class="row">
     <div class="col-12">
       <div class="row">
         <% if @groups.present? %>
-          <%= render @groups %>
+          <%= @groups.name %>
         <% else %>
           <p>NO RESULT</p>
         <% end %>
