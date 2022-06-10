@@ -59,9 +59,7 @@ gem 'high_voltage'
 gem 'sorcery'
 
 # デザイン
-gem 'bootstrap', '~> 4.4.1'
 gem 'font-awesome-sass', '~> 5.12.0'
-gem 'jquery-rails'
 
 # 日本語翻訳
 gem 'rails-i18n'
