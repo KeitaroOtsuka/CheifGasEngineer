@@ -1,0 +1,14 @@
+<h1>グループ一覧ページ</h1>
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <% if @groups.present? %>
+          <%= render @groups %>
+        <% else %>
+          <p>NO RESULT</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
