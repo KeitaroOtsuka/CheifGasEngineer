@@ -5,7 +5,7 @@
     <div class="col-12">
       <div class="row">
         <% if @groups.present? %>
-          <%= @groups.name %>
+          <%= render @groups %>
         <% else %>
           <p>NO RESULT</p>
         <% end %>
