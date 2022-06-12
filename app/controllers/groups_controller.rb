@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_params, only: [:edit, :update, :destroy]
   def index
     @groups = Group.all.order(created_at: :desc)
   end
@@ -18,7 +19,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-
+    @group = Group.find(params[:id])
   end
 
   def edit
@@ -37,6 +38,8 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name)
   end
-
-
+  
+  def set_params
+    @group = current_user.groups.find(params[:id])
+  end
 end
