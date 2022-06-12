@@ -63,3 +63,7 @@ gem 'font-awesome-sass', '~> 5.12.0'
 
 # 日本語翻訳
 gem 'rails-i18n'
+
+#バイバグ
+gem 'pry-byebug', group: :development
+gem 'pry-rails'

@@ -1,3 +1,4 @@
+<% if current_user.own?(group) %>
 <ul class='crud-menu-btn list-inline float-right'>
   <li class="list-inline-item">
     <%= link_to edit_group_path(group), id: "button-edit-#{group.id}" do %>
@@ -10,3 +11,4 @@
     <% end %>
   </li>
 </ul>
+<% end %>

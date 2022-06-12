@@ -6,12 +6,13 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @group.users << current_user
   end
 
   def create
     @group = Group.new(group_params)
+    @group.users << current_user
     if @group.save
+      binding.pry
       redirect_to groups_path
     else
       render :new
@@ -39,12 +40,10 @@ class GroupsController < ApplicationController
 
   private
   def group_params
-    params.require(:group).permit(:name, user_ids: [] )
+    params.require(:group).permit(:name, {:user_ids => []})
   end
   
   def set_params
     @group = Group.find(params[:id])
   end
-
-  
 end
