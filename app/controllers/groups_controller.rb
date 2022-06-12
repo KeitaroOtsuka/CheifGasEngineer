@@ -25,7 +25,11 @@ class GroupsController < ApplicationController
   def edit; end
 
   def update
-
+    if @group.update(group_params)
+      redirect_to groups_path
+    else
+      render :edit
+    end
   end
 
   def destroy
