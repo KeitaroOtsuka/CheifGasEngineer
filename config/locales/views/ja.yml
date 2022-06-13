@@ -1,8 +1,10 @@
 ja:
   defaults:
+    group_search: 'グループ検索'
     login: 'ログイン'
-    register: '登録'
     logout: 'ログアウト'
+    register: '登録'
+    signup: 'サインアップ'
   users:
     new:
       title: 'ユーザー登録'
