@@ -12,4 +12,12 @@ ja:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
-      
+  groups:
+    index:
+      title: 'グループ一覧ページ'
+    new:
+      title: 'グループ作成ページ'
+    show:
+      title: 'グループ詳細ページ'
+    edit:
+      title: 'グループ編集ページ'
