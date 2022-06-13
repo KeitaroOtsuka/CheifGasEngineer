@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :groups, through: :group_users, dependent: :destroy
 
   def own?(object)
-    id == object.users.ids
+    id == object.owner_id
     # binding.pry
   end
 end
