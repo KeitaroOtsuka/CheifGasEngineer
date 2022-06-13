@@ -7,5 +7,10 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   has_many :group_users, dependent: :destroy
-  has_many :users, through: :group_users
+  has_many :groups, through: :group_users, dependent: :destroy
+
+  def own?(object)
+    id == object.owner_id
+    # binding.pry
+  end
 end
