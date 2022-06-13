@@ -1,8 +1,10 @@
 ja:
   defaults:
+    group_search: 'グループ検索'
     login: 'ログイン'
-    register: '登録'
     logout: 'ログアウト'
+    register: '登録'
+    signup: 'サインアップ'
   users:
     new:
       title: 'ユーザー登録'
@@ -12,4 +14,12 @@ ja:
       title: 'ログイン'
       to_register_page: '登録ページへ'
       password_forget: 'パスワードをお忘れの方はこちら'
-      
+  groups:
+    index:
+      title: 'グループ一覧ページ'
+    new:
+      title: 'グループ作成ページ'
+    show:
+      title: 'グループ詳細ページ'
+    edit:
+      title: 'グループ編集ページ'
