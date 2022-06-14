@@ -17,8 +17,8 @@ ja:
     edit:
       title: 'ユーザー編集ページ'
     update:
-      success: 'ユーザー情報を変更しました'
-      fail: 'ユーザー情報の変更に失敗しました'
+      success: 'ユーザー情報を更新しました'
+      fail: 'ユーザー情報の更新に失敗しました'
   user_sessions:
     new:
       title: 'ログイン'

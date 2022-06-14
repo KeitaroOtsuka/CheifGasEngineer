@@ -22,8 +22,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_update_params)
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :edit
     end
   end
