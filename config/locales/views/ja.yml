@@ -12,6 +12,13 @@ ja:
     create:
       success: 'ユーザー登録が完了しました'
       fail: 'ユーザー登録に失敗しました'
+    show:
+      title: 'ユーザー詳細ページ'
+    edit:
+      title: 'ユーザー編集ページ'
+    update:
+      success: 'ユーザー情報を変更しました'
+      fail: 'ユーザー情報の変更に失敗しました'
   user_sessions:
     new:
       title: 'ログイン'
