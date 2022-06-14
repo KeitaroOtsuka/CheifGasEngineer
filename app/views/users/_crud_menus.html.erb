@@ -1,0 +1,9 @@
+<% if current_user..id == @user.id %>
+  <ul class='crud-menu-btn list-inline float-right'>
+    <li class="list-inline-item">
+      <%= link_to edit_user_path(@user), id: "button-edit-#{@user.id}" do %>
+        <%= icon 'fa', 'pen' %>
+      <% end %>
+    </li>
+  </ul>
+<% end %>
