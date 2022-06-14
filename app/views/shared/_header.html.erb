@@ -14,7 +14,7 @@
           <%= image_tag 'sample.jpeg', size: '40x40', class: 'rounded-circle mr15'%>
         </a>
         <div class='dropdown-menu dropdown-menu-right' >
-          <div class='dropdown-item'><%= current_user.decorate.full_name %></div>
+          <%= link_to current_user.decorate.full_name, user_path(current_user), class: 'dropdown-item' %>
           <div class='dropdown-item dropdown-divider'></div>
           <%= link_to "参加しているグループ", "#", class: 'dropdown-item' %>
           <%= link_to (t 'defaults.logout'), logout_path, class: 'dropdown-item', method: :delete %>

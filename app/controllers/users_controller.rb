@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
-  before_action :set_user, only: %i[show]
+  before_action :set_users, only: %i[show edit update]
 
   def new
     @user = User.new
@@ -17,6 +17,11 @@ class UsersController < ApplicationController
   end
 
   def show; end
+
+  def edit; end
+
+  def update
+  end
 
   private
   def set_users
