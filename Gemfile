@@ -60,6 +60,7 @@ gem 'sorcery'
 
 # デザイン
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'draper'
 
 # 日本語翻訳
 gem 'rails-i18n'
