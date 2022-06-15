@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_params, only: [:edit, :update, :destroy]
+  before_action :set_params, only: [:edit, :update, :destroy, :withdrawal]
   def index
     @groups = Group.all.order(created_at: :desc)
   end
@@ -43,8 +43,13 @@ class GroupsController < ApplicationController
     @group = Group.find_by(id: params[:id])
     if !@group.users.include?(current_user)
       @group.users << current_user
-      redirect_to root_path
+      redirect_to group_path
     end
+  end
+
+  def withdrawal
+    @group.users.delete(current_user)
+    redirect_to groups_path
   end
 
   private

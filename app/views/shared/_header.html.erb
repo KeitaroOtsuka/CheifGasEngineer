@@ -16,8 +16,12 @@
         <div class='dropdown-menu dropdown-menu-right' >
           <%= link_to current_user.decorate.full_name, user_path(current_user), class: 'dropdown-item' %>
           <div class='dropdown-item dropdown-divider'></div>
-          <% current_user.groups.each do |group| %>
-            <%= link_to group.name, group_path(group), class: 'dropdown-item' %>
+          <% if current_user.groups.present? %>
+            <% current_user.groups.each do |group| %>
+              <%= link_to group.name, group_path(group), class: 'dropdown-item' %>
+            <% end %>
+          <% else %>
+            <p>無所属</p>
           <% end %>
           <%= link_to (t 'defaults.logout'), logout_path, class: 'dropdown-item', method: :delete %>
         </div>
