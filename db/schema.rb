@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_16_000238) do
+ActiveRecord::Schema.define(version: 2022_06_16_010312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 2022_06_16_000238) do
     t.string "body", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "year_id", null: false
+    t.integer "exam_type", null: false
+    t.string "title", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_exams_on_category_id"
+    t.index ["year_id"], name: "index_exams_on_year_id"
   end
 
   create_table "group_users", force: :cascade do |t|
@@ -37,6 +48,16 @@ ActiveRecord::Schema.define(version: 2022_06_16_000238) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "owner_id", null: false
     t.index ["name"], name: "index_groups_on_name", unique: true
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.bigint "exam_id", null: false
+    t.text "sentence"
+    t.integer "answer"
+    t.text "commentary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,6 +79,9 @@ ActiveRecord::Schema.define(version: 2022_06_16_000238) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "exams", "categories"
+  add_foreign_key "exams", "years"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "questions", "exams"
 end
