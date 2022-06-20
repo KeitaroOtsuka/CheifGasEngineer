@@ -1,8 +1,9 @@
 class Exam < ApplicationRecord
   belongs_to :category
   belongs_to :year
-  has_mamy :questions
+  has_many :questions
 
-  validates :exam_id, presence: true
   validates :title, presence: true
+
+  enum exam_type: { otsu: 0, kou: 1 }
 end
