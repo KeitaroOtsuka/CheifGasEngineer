@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'exams/new'
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       delete :withdrawal
     end
   end
+  resources :password_resets, only: %i[new create edit update]
 
   root 'static_pages#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
