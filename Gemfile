@@ -68,3 +68,5 @@ gem 'rails-i18n'
 #バイバグ
 gem 'pry-byebug', group: :development
 gem 'pry-rails'
+
+gem 'pdf-reader'
