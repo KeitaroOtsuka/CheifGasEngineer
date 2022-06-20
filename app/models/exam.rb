@@ -5,4 +5,6 @@ class Exam < ApplicationRecord
 
   validates :exam_id, presence: true
   validates :title, presence: true
+
+  enum {}
 end
