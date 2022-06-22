@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_20_142412) do
+ActiveRecord::Schema.define(version: 2022_06_22_064016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 2022_06_20_142412) do
     t.string "body", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "choices", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.integer "choice1"
+    t.integer "choice2"
+    t.integer "choice3"
+    t.integer "choice4"
+    t.integer "choice5"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_choices_on_question_id"
   end
 
   create_table "exams", force: :cascade do |t|
@@ -61,6 +73,7 @@ ActiveRecord::Schema.define(version: 2022_06_20_142412) do
     t.text "supplement2"
     t.text "supplement3"
     t.text "supplement4"
+    t.text "supplement5"
     t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 
@@ -88,6 +101,7 @@ ActiveRecord::Schema.define(version: 2022_06_20_142412) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "choices", "questions"
   add_foreign_key "exams", "categories"
   add_foreign_key "exams", "years"
   add_foreign_key "group_users", "groups"
