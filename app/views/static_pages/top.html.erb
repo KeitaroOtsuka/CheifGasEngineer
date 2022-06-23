@@ -8,7 +8,13 @@
   <p>test</p>
   <p>test</p>
   <p>test</p>
-  <p>test</p>
-  <p>test</p>
-  <%= link_to "解いてみる", questions_path %>
+  <nav>
+    <ul>
+      <% if logged_in? %>
+        <li><%= link_to "問題を解く", questions_path %></li>
+      <% else %>
+        <li><%= link_to '問題を解く', '/guest_login', method: :post %></li>
+      <% end %>
+    </ul>
+  </nav>
 </div>
