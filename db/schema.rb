@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_20_142412) do
+ActiveRecord::Schema.define(version: 2022_06_23_001257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 2022_06_20_142412) do
     t.string "body", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "choices", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.integer "choice1"
+    t.integer "choice2"
+    t.integer "choice3"
+    t.integer "choice4"
+    t.integer "choice5"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_choices_on_question_id"
   end
 
   create_table "exams", force: :cascade do |t|
@@ -61,7 +73,27 @@ ActiveRecord::Schema.define(version: 2022_06_20_142412) do
     t.text "supplement2"
     t.text "supplement3"
     t.text "supplement4"
+    t.text "supplement5"
     t.index ["exam_id"], name: "index_questions_on_exam_id"
+  end
+
+  create_table "result_questions", force: :cascade do |t|
+    t.bigint "result_id", null: false
+    t.bigint "question_id", null: false
+    t.boolean "judge", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_result_questions_on_question_id"
+    t.index ["result_id"], name: "index_result_questions_on_result_id"
+  end
+
+  create_table "results", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "choice_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["choice_id"], name: "index_results_on_choice_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,9 +120,14 @@ ActiveRecord::Schema.define(version: 2022_06_20_142412) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "choices", "questions"
   add_foreign_key "exams", "categories"
   add_foreign_key "exams", "years"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
   add_foreign_key "questions", "exams"
+  add_foreign_key "result_questions", "questions"
+  add_foreign_key "result_questions", "results"
+  add_foreign_key "results", "choices"
+  add_foreign_key "results", "users"
 end
