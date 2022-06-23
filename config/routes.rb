@@ -13,8 +13,12 @@ Rails.application.routes.draw do
     end
   end
   resources :password_resets, only: %i[new create edit update]
-  resources :questions, only: %i[index show]
-
+  resources :questions, only: %i[index] do
+    member do
+      get :categorize1
+      get :categorize2
+    end
+  end
   root 'static_pages#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
