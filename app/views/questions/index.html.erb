@@ -1,0 +1,3 @@
+<% @questions.each do |question| %>
+  <%= link_to question.sentence, question_path(question.id) %>
+<% end %>
