@@ -1,21 +1,21 @@
 <h1>過去問道場</h1>
 <%= link_to "年度別に問題を解く", categorize1_question_path %>
 <%= link_to "分野別に問題を解く", categorize2_question_path %>
-<% @questions.exams.each do |question| %>
-  <h1>甲</h1>
-    <% if question.kou? && question.year_id == 1 %>
-      <%= link_to "令和２年度", "#" %>
+<% @questions.each do |question| %>
+  <h3>甲</h1>
+    <% if question.exam.kou? && question.exam.year_id == 1 %>
+      <%= link_to "令和２年度", show_year_question_path(question.id) %>
     <% end %>
     <br>
-    <% if question.kou? && question.year_id == 2 %>
-      <%= link_to "令和３年度", "#" %>
+    <% if question.exam.kou? && question.exam.year_id == 2 %>
+      <%= link_to "令和３年度", show_year_question_path(question.id) %>
     <% end %>
-  <h1>乙</h1>
-    <% if question.otsu? && question.year_id == 1 %>
-      <%= link_to "令和２年度", "#" %>
+  <h3>乙</h1>
+    <% if question.exam.otsu? && question.exam.year_id == 1 %>
+      <%= link_to "令和２年度", show_year_question_path(question.id) %>
     <% end %>
     <br>
-    <% if question.otsu? && question.year_id == 2 %>
-      <%= link_to "令和３年度", "#" %>
+    <% if question.exam.otsu? && question.exam.year_id == 2 %>
+      <%= link_to "令和３年度", show_year_question_path(question.id) %>
     <% end %>
 <% end %>

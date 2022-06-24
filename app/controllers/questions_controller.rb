@@ -8,10 +8,10 @@ class QuestionsController < ApplicationController
   end
 
   def show_year
-    @question = Question.exams.find(params[:year_id])
+    @question = Question.find(params[:id])
   end
 
   def show_category
-    @question = Question.exams.find(params[:category_id])
+    @question = Question.find(params[:id])
   end
 end
