@@ -1,12 +1,17 @@
 class QuestionsController < ApplicationController
-  def index
-    @questions = Question.all
-  end
   def categorize1
-    @question = Question.exams.find(params[:year_id])
+    @questions = Question.all
   end
 
   def categorize2
+    @questions = Question.all
+  end
+
+  def show_year
+    @question = Question.exams.find(params[:year_id])
+  end
+
+  def show_category
     @question = Question.exams.find(params[:category_id])
   end
 end

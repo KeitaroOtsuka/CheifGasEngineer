@@ -1,6 +1,0 @@
-<h1>過去問道場</h1>
-<%= link_to "年度別に問題を解く", question_path(question.year_id) %>
-<%= link_to "分野別に問題を解く", question_path(question.id) %>
-  <% @questions.each do |question| %>
-    <%= link_to question.sentence, question_path(question.id) %>
-  <% end %>

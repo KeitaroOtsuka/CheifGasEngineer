@@ -13,10 +13,12 @@ Rails.application.routes.draw do
     end
   end
   resources :password_resets, only: %i[new create edit update]
-  resources :questions, only: %i[index] do
+  resources :questions, only: %i[show] do
     member do
       get :categorize1
       get :categorize2
+      get :show_year
+      get :show_category
     end
   end
   root 'static_pages#top'

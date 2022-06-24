@@ -1,0 +1,29 @@
+<h1>過去問道場</h1>
+<%= link_to "年度別に問題を解く", categorize1_question_path %>
+<%= link_to "分野別に問題を解く", categorize2_question_path %>
+<% @questions.exams.each do |question| %>
+  <h1>甲</h1>
+    <% if question.kou? && question.category_id == 1 %>
+      <%= link_to "法令","#" %>
+    <% end %>
+    <br>
+    <% if question.kou? && question.category_id == 2 %>
+      <%= link_to "基礎","#" %>
+    <% end %>
+    <br>
+    <% if question.kou? && question.category_id == 3 %>
+      <%= link_to "ガス機器", "#" %>
+    <% end %>
+  <h1>乙</h1>
+    <% if question.otsu? && question.category_id == 1 %>
+      <%= link_to "法令","#" %>
+    <% end %>
+    <br>
+    <% if question.otsu? && question.category_id == 2 %>
+      <%= link_to "基礎","#" %>
+    <% end %>
+    <br>
+    <% if question.otsu? && question.category_id == 3 %>
+      <%= link_to "ガス機器", "#" %>
+    <% end %>
+<% end %>
