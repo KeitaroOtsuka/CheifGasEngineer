@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :groups, through: :group_users, dependent: :destroy
 
   has_many :results, dependent: :destroy
-  has_many :choices, through: :results, dependent: :destroy
+  has_many :questions, through: :results, dependent: :destroy
 
   def own?(object)
     id == object.owner_id

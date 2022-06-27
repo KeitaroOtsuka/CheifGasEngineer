@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   post '/guest_login', to: 'user_sessions#guest_login'
   
+  root 'static_pages#top'
   resources :users, only: %i[new create show edit update]
   resources :groups do
     member do
@@ -21,6 +22,6 @@ Rails.application.routes.draw do
       get :show_category
     end
   end
-  root 'static_pages#top'
+  resources :results
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
