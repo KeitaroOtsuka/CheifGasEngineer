@@ -3,6 +3,11 @@ ja:
     model:
       user: 'ユーザー'
       group: 'グループ'
+      exam: '試験'
+      question: '問題'
+      category: 'カテゴリー'
+      year: '年度'
+      choice: '選択'
     attributes:
       user:
         email: 'メールアドレス'
@@ -13,3 +18,25 @@ ja:
       group:
         name: 'グループ名'
         avatar: 'アバター'
+      exam:
+        exam_type: '試験の種類'
+        title: 'タイトル'
+      question:
+        sentence: '問題'
+        supplement1: '補足1'
+        supplement2: '補足2'
+        supplement3: '補足3'
+        supplement4: '補足4'
+        supplement5: '補足5'
+        answer: '答え'
+        commentary: '解説'
+      category:
+        body: 'カテゴリー'
+      year:
+        body: '年度'
+      choice:
+        choice1: '1'
+        choice2: '2'
+        choice3: '3'
+        choice4: '4'
+        choice5: '5'
