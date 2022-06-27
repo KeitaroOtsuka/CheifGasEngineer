@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
+  post '/guest_login', to: 'user_sessions#guest_login'
   
   resources :users, only: %i[new create show edit update]
   resources :groups do
@@ -12,8 +13,14 @@ Rails.application.routes.draw do
     end
   end
   resources :password_resets, only: %i[new create edit update]
-  resources :questions, only: %i[index show]
-
+  resources :questions, only: %i[show] do
+    member do
+      get :categorize1
+      get :categorize2
+      get :show_year
+      get :show_category
+    end
+  end
   root 'static_pages#top'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
