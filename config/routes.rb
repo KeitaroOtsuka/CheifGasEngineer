@@ -18,8 +18,16 @@ Rails.application.routes.draw do
     member do
       get :categorize1
       get :categorize2
-      get :show_year
-      get :show_category
+      get :show_reiwa2_otsu
+      get :show_reiwa3_otsu
+      get :show_houki_otsu
+      get :show_kiso_otsu
+      get :show_gijutsu_otsu
+      get :show_reiwa2_kou
+      get :show_reiwa3_kou
+      get :show_houki_kou
+      get :show_kiso_kou
+      get :show_gijutsu_kou
     end
   end
   resources :results
