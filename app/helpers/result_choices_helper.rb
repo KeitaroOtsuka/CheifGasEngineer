@@ -1,0 +1,2 @@
+module ResultChoicesHelper
+end
