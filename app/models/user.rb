@@ -15,7 +15,8 @@ class User < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :questions, through: :results, dependent: :destroy
 
-  enum role: { non: 0, otsu: 1, kou: 2, admin: 3 }
+  enum role: { general: 0, admin: 1 }
+  enum certification: { non: 0, otsu: 1, kou: 2 }
 
   def own?(object)
     id == object.owner_id
