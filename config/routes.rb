@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       get :show_gijutsu_kou
     end
   end
-  resources :results
+  resources :results, only: %i[create]
+  resources :results_choices, only: %i[create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

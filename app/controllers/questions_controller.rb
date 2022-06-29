@@ -8,30 +8,30 @@ class QuestionsController < ApplicationController
   end
   
   def show_reiwa2_otsu
-    a = Question.where(exam_id: 1).limit(16)
-    b = Question.where(exam_id: 2).limit(10)
-    c = Question.where(exam_id: 3).limit(20)
+    a = Question.where(exam_id: 1).order("RANDOM()").limit(16)
+    b = Question.where(exam_id: 2).order("RANDOM()").limit(10)
+    c = Question.where(exam_id: 3).order("RANDOM()").limit(20)
     @question = a + b + c
   end
 
   def show_reiwa3_otsu
-    a = Question.where(exam_id: 4).limit(16)
-    b = Question.where(exam_id: 5).limit(10)
-    c = Question.where(exam_id: 6).limit(20)
+    a = Question.where(exam_id: 4).order("RANDOM()").limit(16)
+    b = Question.where(exam_id: 5).order("RANDOM()").limit(10)
+    c = Question.where(exam_id: 6).order("RANDOM()").limit(20)
     @question = a + b + c
   end
 
   def show_reiwa2_kou
-    a = Question.where(exam_id: 7).limit(16)
-    b = Question.where(exam_id: 8).limit(10)
-    c = Question.where(exam_id: 9).limit(20)
+    a = Question.where(exam_id: 7).order("RANDOM()").limit(16)
+    b = Question.where(exam_id: 8).order("RANDOM()").limit(10)
+    c = Question.where(exam_id: 9).order("RANDOM()").limit(20)
     @question = a + b + c
   end
 
   def show_reiwa3_kou
-    a = Question.where(exam_id: 10).limit(16)
-    b = Question.where(exam_id: 11).limit(10)
-    c = Question.where(exam_id: 12).limit(20)
+    a = Question.where(exam_id: 10).order("RANDOM()").limit(16)
+    b = Question.where(exam_id: 11).order("RANDOM()").limit(10)
+    c = Question.where(exam_id: 12).order("RANDOM()").limit(20)
     @question = a + b + c
     # binding.pry
   end

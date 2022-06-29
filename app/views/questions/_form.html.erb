@@ -1,15 +1,17 @@
 <% @question.each do |question| %>
-  <h3><%= question.sentence %></h2>
+  <h3><%= question.sentence %></h3>
   <br>
-  <h5>1.<%= question.supplement1 %></h4>
+  <h5>1.<%= question.supplement1 %></h5>
   <br>
-  <h5>2.<%= question.supplement2 %></h4>
+  <h5>2.<%= question.supplement2 %></h5>
   <br>
-  <h5>3.<%= question.supplement3 %></h4>
+  <h5>3.<%= question.supplement3 %></h5>
   <br>
-  <h5>4.<%= question.supplement4 %></h4>
+  <h5>4.<%= question.supplement4 %></h5>
   <br>
-  <h5>5.<%= question.supplement5 %></h4>
+  <% if question.supplement5.present? %>
+    <h5>5.<%= question.supplement5 %></h5>
+  <% end %>
   <br>
   <% question.choices.each do |question_choice| %>
     <%= link_to question_choice.choice1, "#" %>

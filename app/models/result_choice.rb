@@ -2,5 +2,5 @@ class ResultChoice < ApplicationRecord
   belongs_to :result
   belongs_to :choice
 
-  validates :judge, presence: true
+  validates :judge, inclusion: [true, false]
 end
