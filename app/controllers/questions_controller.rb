@@ -8,42 +8,42 @@ class QuestionsController < ApplicationController
   end
   
   def show_reiwa2_otsu
-    @question = Question.all.includes(exam_id: 1 || 2 || 3 )
-  end
-
-  def show_reiwa2_kou
-    @question = Question.all.where(exam_id: 7 || 8 || 9)
+    @question = Question.where(exam_id: 1).or(Question.where(exam_id: 2)).or(Question.where(exam_id: 3))
   end
 
   def show_reiwa3_otsu
-    @question = Question.all.where(exam_id: 4 || 5 || 6)
+    @question = Question.where(exam_id: 4).or(Question.where(exam_id: 5)).or(Question.where(exam_id: 6))
+  end
+
+  def show_reiwa2_kou
+    @question = Question.where(exam_id: 7).or(Question.where(exam_id: 8)).or(Question.where(exam_id: 9))
   end
 
   def show_reiwa3_kou
-    @question = Question.all.where(exam_id: 10 || 11 || 12)
+    @question = Question.where(exam_id: 10).or(Question.where(exam_id: 11)).or(Question.where(exam_id: 12))
   end
 
   def show_houki_otsu
-    @question = Question.all.where(exam_id: 1 || 4)
+    @question = Question.where(exam_id: 1).or(Question.where(exam_id: 4))
   end
 
   def show_houki_kou
-    @question = Question.all.where(exam_id: 7 || 10)
+    @question = Question.where(exam_id: 7).or(Question.where(exam_id: 10))
   end
 
   def show_kiso_otsu
-    @question = Question.all.where(exam_id: 2 || 5)
+    @question = Question.where(exam_id: 2).or(Question.where(exam_id: 5))
   end
 
   def show_kiso_kou
-    @question = Question.all.where(exam_id: 8 || 11)
+    @question = Question.where(exam_id: 8).or(Question.where(exam_id: 11))
   end
 
   def show_gijutsu_otsu
-    @question = Question.all.where(exam_id: 3 || 6)
+    @question = Question.where(exam_id: 3).or(Question.where(exam_id: 6))
   end
 
   def show_gijutsu_kou
-    @question = Question.all.where(exam_id: 9 || 12)
+    @question = Question.where(exam_id: 9).or(Question.where(exam_id: 12))
   end
 end
