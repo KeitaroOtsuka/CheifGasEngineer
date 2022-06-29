@@ -1,0 +1,18 @@
+<% @questions.each do |question| %>
+  <h3>甲</h1>
+    <% if question.exam.kou? && question.exam.year_id == 1 %>
+      <%= link_to "令和２年度", show_year_question_path(question.id) %>
+    <% end %>
+    <br>
+    <% if question.exam.kou? && question.exam.year_id == 2 %>
+      <%= link_to "令和３年度", show_year_question_path(question.id) %>
+    <% end %>
+  <h3>乙</h1>
+    <% if question.exam.otsu? && question.exam.year_id == 1 %>
+      <%= link_to "令和２年度", show_year_question_path(question.id) %>
+    <% end %>
+    <br>
+    <% if question.exam.otsu? && question.exam.year_id == 2 %>
+      <%= link_to "令和３年度", show_year_question_path(question.id) %>
+    <% end %>
+<% end %>

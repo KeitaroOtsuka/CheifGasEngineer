@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   post '/guest_login', to: 'user_sessions#guest_login'
   
+  root 'static_pages#top'
   resources :users, only: %i[new create show edit update]
   resources :groups do
     member do
@@ -17,10 +18,19 @@ Rails.application.routes.draw do
     member do
       get :categorize1
       get :categorize2
-      get :show_year
-      get :show_category
+      get :show_reiwa2_otsu
+      get :show_reiwa3_otsu
+      get :show_houki_otsu
+      get :show_kiso_otsu
+      get :show_gijutsu_otsu
+      get :show_reiwa2_kou
+      get :show_reiwa3_kou
+      get :show_houki_kou
+      get :show_kiso_kou
+      get :show_gijutsu_kou
     end
   end
-  root 'static_pages#top'
+  resources :results, only: %i[create]
+  resources :results_choices, only: %i[create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_23_001257) do
+ActiveRecord::Schema.define(version: 2022_06_29_134053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,13 +23,13 @@ ActiveRecord::Schema.define(version: 2022_06_23_001257) do
 
   create_table "choices", force: :cascade do |t|
     t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.integer "choice1"
     t.integer "choice2"
     t.integer "choice3"
     t.integer "choice4"
     t.integer "choice5"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_choices_on_question_id"
   end
 
@@ -77,22 +77,22 @@ ActiveRecord::Schema.define(version: 2022_06_23_001257) do
     t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 
-  create_table "result_questions", force: :cascade do |t|
+  create_table "result_choices", force: :cascade do |t|
     t.bigint "result_id", null: false
-    t.bigint "question_id", null: false
-    t.boolean "judge", null: false
+    t.bigint "choice_id", null: false
+    t.boolean "judge", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["question_id"], name: "index_result_questions_on_question_id"
-    t.index ["result_id"], name: "index_result_questions_on_result_id"
+    t.index ["choice_id"], name: "index_result_choices_on_choice_id"
+    t.index ["result_id"], name: "index_result_choices_on_result_id"
   end
 
   create_table "results", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "choice_id", null: false
+    t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["choice_id"], name: "index_results_on_choice_id"
+    t.index ["question_id"], name: "index_results_on_question_id"
     t.index ["user_id"], name: "index_results_on_user_id"
   end
 
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2022_06_23_001257) do
     t.string "salt"
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.integer "role"
+    t.integer "role", default: 0, null: false
     t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 2022_06_23_001257) do
     t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_email_sent_at"
     t.integer "access_count_to_reset_password_page", default: 0
+    t.integer "certification", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token"
   end
@@ -126,8 +127,8 @@ ActiveRecord::Schema.define(version: 2022_06_23_001257) do
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
   add_foreign_key "questions", "exams"
-  add_foreign_key "result_questions", "questions"
-  add_foreign_key "result_questions", "results"
-  add_foreign_key "results", "choices"
+  add_foreign_key "result_choices", "choices"
+  add_foreign_key "result_choices", "results"
+  add_foreign_key "results", "questions"
   add_foreign_key "results", "users"
 end

@@ -1,5 +1,6 @@
 class Choice < ApplicationRecord
   belongs_to :question
-  has_many :results, dependent: :destroy
-  has_many :users, through: :results, dependent: :destroy
+
+  has_many :result_choices, dependent: :destroy
+  has_many :results, through: :result_choices, dependent: :destroy
 end
