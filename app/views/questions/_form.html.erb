@@ -11,11 +11,13 @@
   <br>
   <h5>5.<%= question.supplement5 %></h4>
   <br>
-  <%= link_to question.choice1, "#" %>
-  <%= link_to question.choice2, "#" %>
-  <%= link_to question.choice3, "#" %>
-  <%= link_to question.choice4, "#" %>
-  <%= link_to question.choice5, "#" %>
+  <% question.choices.each do |question_choice| %>
+    <%= link_to question_choice.choice1, "#" %>
+    <%= link_to question_choice.choice2, "#" %>
+    <%= link_to question_choice.choice3, "#" %>
+    <%= link_to question_choice.choice4, "#" %>
+    <%= link_to question_choice.choice5, "#" %>
+  <% end %>
   <br>
   <%= question.answer %>
 <% end %>
