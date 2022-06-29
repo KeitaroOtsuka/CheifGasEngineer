@@ -1,23 +1,23 @@
-<h3><%= @question.sentence %></h2>
-<br>
-<h5>1.<%= @question.supplement1 %></h4>
-<br>
-<h5>2.<%= @question.supplement2 %></h4>
-<br>
-<h5>3.<%= @question.supplement3 %></h4>
-<br>
-<h5>4.<%= @question.supplement4 %></h4>
-<br>
-<h5>5.<%= @question.supplement5 %></h4>
-<br>
-<% @question.choices.each do |question| %>
+<% @question.each do |question| %>
+  <h3><%= question.sentence %></h2>
+  <br>
+  <h5>1.<%= question.supplement1 %></h4>
+  <br>
+  <h5>2.<%= question.supplement2 %></h4>
+  <br>
+  <h5>3.<%= question.supplement3 %></h4>
+  <br>
+  <h5>4.<%= question.supplement4 %></h4>
+  <br>
+  <h5>5.<%= question.supplement5 %></h4>
+  <br>
   <%= link_to question.choice1, "#" %>
   <%= link_to question.choice2, "#" %>
   <%= link_to question.choice3, "#" %>
   <%= link_to question.choice4, "#" %>
   <%= link_to question.choice5, "#" %>
+  <br>
+  <%= question.answer %>
 <% end %>
-<br>
-<%= @question.answer %>
 <br>
 <%= link_to "戻る", categorize1_question_path %>
