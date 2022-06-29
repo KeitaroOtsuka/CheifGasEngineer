@@ -15,9 +15,15 @@ class User < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :questions, through: :results, dependent: :destroy
 
+  enum role: { none: 0, otsu: 1, kou: 2, admin: 3 }
+
   def own?(object)
     id == object.owner_id
     # binding.pry
+  end
+
+  def my_group?(object)
+    current_user.groups.id == object.id
   end
 
   def deliver_reset_password_instructions!
