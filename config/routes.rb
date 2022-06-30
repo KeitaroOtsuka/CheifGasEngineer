@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     member do
       get :join
       delete :withdrawal
+      delete :withdrawal_member
     end
   end
   resources :password_resets, only: %i[new create edit update]

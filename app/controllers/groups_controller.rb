@@ -52,6 +52,11 @@ class GroupsController < ApplicationController
     redirect_to groups_path
   end
 
+  def withdrawal_member
+    @group.users.delete(user)
+    redirect_to group_path(@group)
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, {:user_ids => []})
