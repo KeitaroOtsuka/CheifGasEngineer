@@ -14,11 +14,11 @@
   <% end %>
   <br>
   <% question.choices.each do |question_choice| %>
-    <%= link_to question_choice.choice1, "#" %>
-    <%= link_to question_choice.choice2, "#" %>
-    <%= link_to question_choice.choice3, "#" %>
-    <%= link_to question_choice.choice4, "#" %>
-    <%= link_to question_choice.choice5, "#" %>
+    <%= link_to question_choice.choice1, result_question_path(@question) %>
+    <%= link_to question_choice.choice2, result_question_path(@question) %>
+    <%= link_to question_choice.choice3, result_question_path(@question) %>
+    <%= link_to question_choice.choice4, result_question_path(@question) %>
+    <%= link_to question_choice.choice5, result_question_path(@question) %>
   <% end %>
   <br>
   <%= question.answer %>

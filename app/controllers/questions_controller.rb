@@ -59,4 +59,10 @@ class QuestionsController < ApplicationController
   def show_gijutsu_kou
     @question = Question.where(exam_id: 9).or(Question.where(exam_id: 12)).order("RANDOM()").limit(20)
   end
+
+  def result
+    @result = Question.find_by(id: params[:id])
+    @result.users << current_user
+    redirect_to root_path
+  end
 end

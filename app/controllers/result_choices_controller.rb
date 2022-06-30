@@ -5,8 +5,10 @@ class ResultChoicesController < ApplicationController
         choice_id: choice.id
       ]
     )
-    if @result_choice.result_id
-
+    if @result_choice.results.questikon_id.answer == @result_choice.choice.body
+      return true
+    else
+      return false
     end
   end
 end
