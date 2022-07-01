@@ -32,6 +32,11 @@ Rails.application.routes.draw do
       get :result
     end
   end
-  resources :results_choices, only: %i[create]
+  resources :results do
+    resources :result_choices, only: %i[create], shallow: true
+    member do
+      get :your_choice
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

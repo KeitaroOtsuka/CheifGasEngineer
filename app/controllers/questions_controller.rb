@@ -63,6 +63,6 @@ class QuestionsController < ApplicationController
   def result
     @result = Question.find_by(id: params[:id])
     @result.users << current_user
-    redirect_to root_path
+    redirect_to your_choice_result_path(.id)
   end
 end
