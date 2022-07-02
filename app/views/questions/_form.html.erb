@@ -1,16 +1,40 @@
 <% @question.each do |question| %>
-  <h3><%= question.sentence %></h3>
+  <h2><%= question.sentence %></h2>
   <br>
-  <h5>1.<%= question.supplement1 %></h5>
+  <% if question.sub_sentence.present? %>
+    <h2><%= question.sub_sentence %></h2>
+  <% end %>
   <br>
-  <h5>2.<%= question.supplement2 %></h5>
+  <% if question.sub_sentence2.present? %>
+    <h2><%= question.sub_sentence2 %></h2>
+  <% end %>
   <br>
-  <h5>3.<%= question.supplement3 %></h5>
+  <% if question.sub_sentence3.present? %>
+    <h2><%= question.sub_sentence3 %></h2>
+  <% end %>
   <br>
-  <h5>4.<%= question.supplement4 %></h5>
+  <% if question.sub_sentence4.present? %>
+    <h2><%= question.sub_sentence4 %></h2>
+  <% end %>
+  <br>
+  <% if question.supplement1.present? %>
+    <h5>(1)<%= question.supplement1 %></h5>
+  <% end %>
+  <br>
+  <% if question.supplement2.present? %>
+    <h5>(2)<%= question.supplement2 %></h5>
+  <% end %>
+  <br>
+  <% if question.supplement3.present? %>
+    <h5>(3)<%= question.supplement3 %></h5>
+  <% end %>
+  <br>
+  <% if question.supplement4.present? %>
+    <h5>(4)<%= question.supplement4 %></h5>
+  <% end %>
   <br>
   <% if question.supplement5.present? %>
-    <h5>5.<%= question.supplement5 %></h5>
+    <h5>(5)<%= question.supplement5 %></h5>
   <% end %>
   <br>
   <% question.choices.each do |question_choice| %>
@@ -20,8 +44,6 @@
     <%= link_to question_choice.choice4, result_question_path(@question) %>
     <%= link_to question_choice.choice5, result_question_path(@question) %>
   <% end %>
-  <br>
-  <%= question.answer %>
 <% end %>
 <br>
 <%= link_to "戻る", categorize1_question_path %>

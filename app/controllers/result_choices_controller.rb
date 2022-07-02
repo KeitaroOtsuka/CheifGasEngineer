@@ -2,11 +2,11 @@ class ResultChoicesController < ApplicationController
   def create
     result = current_user.result_choices.build(result_params)
     if result.choices.body == current_user.questions.answer
-      result.body = true
-      :render partial: 'form', locals: { question: @question }
+      result.judge = true
+      redirect_to root_path
     else
-      result.body = false
-      :render partial: 'form', locals: { question: @question }
+      result.judge = false
+      redirect_to root_path
     end
   end
 
