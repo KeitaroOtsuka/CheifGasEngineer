@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_29_134053) do
+ActiveRecord::Schema.define(version: 2022_07_02_205506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,10 @@ ActiveRecord::Schema.define(version: 2022_06_29_134053) do
     t.text "supplement3"
     t.text "supplement4"
     t.text "supplement5"
+    t.text "sub_sentence"
+    t.text "sub_sentence2"
+    t.text "sub_sentence3"
+    t.text "sub_sentence4"
     t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 

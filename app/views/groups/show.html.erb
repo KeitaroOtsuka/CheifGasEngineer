@@ -13,6 +13,9 @@
 <p>メンバー</p>
 <% @group.users.each do |group_user| %>
   <%= link_to group_user.decorate.full_name, user_path(group_user) %>
+  <% if current_user.admin? %>
+    <%= link_to "退会させる", withdrawal_member_group_path(@group), method: :delete %>
+  <% end %>
   <br>
 <% end %>
 <%= render 'crud_menus', group: @group %>

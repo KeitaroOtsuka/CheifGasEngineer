@@ -1,11 +1,7 @@
 class ResultsController < ApplicationController
-  def create
-    @result = Result.new(params[
-      user_id: current_user.id,
-      question_id: question.id
-    ])
-    if @result.save
-      redirect_to result_choices_path, method: :post
-    end
+  def your_choice
+    @result_choice = Result.find(id: params[:id])
+    @result_choice.choices << current_user.choices.body
+    redirect_to result_result_choices_path
   end
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     member do
       get :join
       delete :withdrawal
+      delete :withdrawal_member
     end
   end
   resources :password_resets, only: %i[new create edit update]
@@ -28,9 +29,11 @@ Rails.application.routes.draw do
       get :show_houki_kou
       get :show_kiso_kou
       get :show_gijutsu_kou
+      get :result
     end
   end
-  resources :results, only: %i[create]
-  resources :results_choices, only: %i[create]
+  resources :results do
+    resources :result_choices, only: %i[create], shallow: true
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
