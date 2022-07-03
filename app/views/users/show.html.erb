@@ -1,4 +1,9 @@
 <h1><%= t '.title' %></h1>
+<tr>
+  <th scope="row"><%= t(User.human_attribute_name(:avatar)) %></th>
+  <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '50x50' %></td>
+</tr>
+<br>
 <p>UserのID:<%= @user.id %></p>
 <p>Userの名前:<%= @user.first_name %></p>
 <p>Userの名前:<%= @user.last_name %></p>
@@ -6,6 +11,7 @@
   <p>所属グループ:<%= group.name %></p>
 <% end %>
 <p>Userのメールアドレス:<%= @user.email %></p>
+
 <% if current_user.id == @user.id %>
   <%= link_to 'edit', edit_user_path(@user) %>
 <% end %>
