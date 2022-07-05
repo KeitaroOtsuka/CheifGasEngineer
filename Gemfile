@@ -79,3 +79,6 @@ gem 'rexml', '~> 3.2', '>= 3.2.4' # rexml/document (LoadError)対策
 # 画像
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
+
+# 検索機能
+gem 'ransack'

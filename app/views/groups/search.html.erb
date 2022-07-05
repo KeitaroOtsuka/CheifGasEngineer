@@ -1,0 +1,17 @@
+<h1>検索結果</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |group| %>
+      <tr>
+        <td><%= image_tag group.avatar.url, class: 'rounded-circle', size: '100x100' %></td>
+        <td><%= link_to group.name, group_path(group) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Top', groups_path %>

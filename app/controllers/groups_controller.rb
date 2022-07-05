@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_params, only: [:edit, :update, :destroy, :withdrawal]
+  before_action :set_q, onlt: [:index, :search]
   def index
     @groups = Group.all.order(created_at: :desc)
   end
@@ -57,6 +58,10 @@ class GroupsController < ApplicationController
     redirect_to group_path(@group)
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
   def group_params
     params.require(:group).permit(:name, {:user_ids => []}, :avatar, :avatar_cache)
@@ -64,5 +69,9 @@ class GroupsController < ApplicationController
   
   def set_params
     @group = Group.find(params[:id])
+  end
+
+  def set_q
+    @q = Group.ransack(params[:q])
   end
 end
