@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :set_params, only: [:edit, :update, :destroy, :withdrawal]
   before_action :set_q, onlt: [:index, :search]
   def index
-    @groups = Group.all.order(created_at: :desc).page(params[:page])
+    @groups = Group.all.order(name: :asc).page(params[:page])
   end
 
   def new
