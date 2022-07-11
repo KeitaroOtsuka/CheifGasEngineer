@@ -6,7 +6,7 @@
   <%= link_to page_path('privacy_policy') do %>
     <li class = "footer-logo2 footer-logo">プライバシーポリシー</li>
   <% end %>
-  <%= link_to page_path('form') do %>
+  <%= link_to new_contact_path( user_id: current_user.id ) do %>
     <li class = "footer-logo3 footer-logo">お問い合わせ</li>
   <% end %>
   </ul>
