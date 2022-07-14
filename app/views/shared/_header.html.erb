@@ -1,10 +1,10 @@
-<nav class='header navbar navbar-expand-lg navigation navbar-dark '>
+<nav class='navbar navbar-expand-lg navigation navbar-dark bg-indigo-700'>
   <div class = "header-left">
     <%= link_to root_path do %>
       <%= image_tag 'top-logo.png', :width => '450', :height => '150' %>
     <% end %>
   </div>
-  <div class='collapse navbar-collapse ' id='navbarSupportedContent'>
+  <div class='collapse navbar-collapse float-right' id='navbarSupportedContent'>
     <ul class=' navbar-nav main-nav align-items-center'>
       <li class='nav-item'>
         <%= link_to (t 'defaults.group_search'), groups_path, class: 'nav-link' %>

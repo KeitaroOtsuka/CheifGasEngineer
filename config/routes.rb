@@ -35,9 +35,7 @@ Rails.application.routes.draw do
       get :result
     end
   end
-  resources :results do
-    resources :result_choices, only: %i[create], shallow: true
-  end
+  resources :results
   resources :contacts, only: [:new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

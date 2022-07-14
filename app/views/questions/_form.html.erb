@@ -1,58 +1,52 @@
-<% @question.each do |question| %>
-  <h2><%= question.sentence %></h2>
-  <br>
-  <% if question.sub_sentence.present? %>
-    <h2><%= question.sub_sentence %></h2>
-    <br>
-  <% end %>
-  <% if question.sub_sentence2.present? %>
-    <h2><%= question.sub_sentence2 %></h2>
-    <br>
-  <% end %>
-  <% if question.sub_sentence3.present? %>
-    <h2><%= question.sub_sentence3 %></h2>
-    <br>
-  <% end %>
-  <% if question.sub_sentence4.present? %>
-    <h2><%= question.sub_sentence4 %></h2>
-    <br>
-  <% end %>
-  <% if question.supplement1.present? %>
-    <%= question.supplement1 %>
-    <br>
-    <br>
-  <% end %>
-  <% if question.supplement2.present? %>
-    <%= question.supplement2 %>
-    <br>
-    <br>
-  <% end %>
-  <% if question.supplement3.present? %>
-    <%= question.supplement3 %>
-    <br>
-    <br>
-  <% end %>
-  <% if question.supplement4.present? %>
-    <%= question.supplement4 %>
-    <br>
-    <br>
-  <% end %>
-  <% if question.supplement5.present? %>
-    <%= question.supplement5 %>
-    <br>
-    <br>
-  <% end %>
-  <% if question.sub_sentence5.present? %>
-    <%= question.sub_sentence5 %>
-    <br>
-  <% end %>
-  <% question.choices.each do |question_choice| %>
-    <%= link_to question_choice.choice1, result_question_path(@question) %>
-    <%= link_to question_choice.choice2, result_question_path(@question) %>
-    <%= link_to question_choice.choice3, result_question_path(@question) %>
-    <%= link_to question_choice.choice4, result_question_path(@question) %>
-    <%= link_to question_choice.choice5, result_question_path(@question) %>
-  <% end %>
+<% @questions.each do |question| %>
+  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-1">
+    <div class="md:flex">
+      <div class="p-8">
+        <div class="uppercase tracking-wide text-sm text-black font-semibold"><%= question.sentence %></div>
+          <% if question.sub_sentence.present? %>
+            <p class="mt-2 text-black"><%= question.sub_sentence %></p>
+          <% end %>
+          <br>
+          <% if question.sub_sentence2.present? %>
+            <p class="mt-2 text-black"><%= question.sub_sentence2 %></p>
+          <% end %>
+          <% if question.sub_sentence3.present? %>
+            <p class="mt-2 text-black"><%= question.sub_sentence3 %></p>
+          <% end %>
+          <% if question.sub_sentence4.present? %>
+            <p class="mt-2 text-black"><%= question.sub_sentence4 %></p>
+          <% end %>
+          <% if question.supplement1.present? %>
+            <p class="mt-2 text-black"><%= question.supplement1 %></p>
+          <% end %>
+          <% if question.supplement2.present? %>
+            <p class="mt-2 text-black"><%= question.supplement2 %></p>
+          <% end %>
+          <% if question.supplement3.present? %>
+            <p class="mt-2 text-black"><%= question.supplement3 %></p>
+          <% end %>
+          <% if question.supplement4.present? %>
+            <p class="mt-2 text-black"><%= question.supplement4 %></p>
+          <% end %>
+          <% if question.supplement5.present? %>
+            <p class="mt-2 text-black"><%= question.supplement5 %></p>
+          <% end %>
+          <% if question.sub_sentence5.present? %>
+            <p class="mt-2 text-black"><%= question.sub_sentence5 %></p>
+          <% end %>
+          <% question.choices.each do |question_choice| %>
+            <div class="flex justify-center">
+              <%= link_to question_choice.choice1, result_question_path(choice_number: 1,question_id: question.id, choice_id: question_choice.id) %>
+              <div class="ml-1"><%= link_to question_choice.choice2, result_question_path(question_choice) %></div>
+              <div class="ml-1"><%= link_to question_choice.choice3, result_question_path(question_choice) %></div>
+              <div class="ml-1"><%= link_to question_choice.choice4, result_question_path(question_choice) %></div>
+              <div class="ml-1"><%= link_to question_choice.choice5, result_question_path(question_choice) %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% end %>
 <br>
 <%= link_to "戻る", categorize1_question_path %>

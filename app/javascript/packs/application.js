@@ -1,4 +1,3 @@
-import 'bootstrap';
 import '../stylesheets/application';
 
 // This file is automatically compiled by Webpack, along with any other files

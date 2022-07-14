@@ -70,8 +70,6 @@ GEM
     afm (0.2.2)
     bcrypt (3.1.18)
     bindex (0.8.1)
-    bootsnap (1.12.0)
-      msgpack (~> 1.2)
     builder (3.2.4)
     byebug (11.1.3)
     carrierwave (2.2.2)
@@ -183,7 +181,6 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.16.0)
-    msgpack (1.5.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     net-imap (0.2.3)
@@ -334,7 +331,6 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
-  bootsnap (>= 1.4.4)
   byebug
   carrierwave (~> 2.0)
   config (= 2.2.1)
