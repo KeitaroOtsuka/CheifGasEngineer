@@ -1,4 +1,3 @@
-import 'bootstrap';
 import '../stylesheets/application';
 
 // This file is automatically compiled by Webpack, along with any other files
@@ -10,6 +9,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import "../css/tailwindcss.css";
 
 Rails.start()
 Turbolinks.start()

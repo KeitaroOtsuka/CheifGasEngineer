@@ -1,14 +1,14 @@
-<div class = "header">
-  <div class = "header-left">
+<div class = "bg-indigo-700">
+  <div class = "float-left">
     <%= link_to root_path do %>
       <%= image_tag 'top-logo.png', :width => '400', :height => '150' %>
     <% end %>
   </div>
-  <div class = "header-right">
+  <div class = "float-right">
     <nav>
       <ul>
-        <li class = "before-login-header-logo1 header-logo"><%= link_to (t 'defaults.signup'), new_user_path %></li>
-        <li class = "before-login-header-logo2 header-logo"><%= link_to (t 'defaults.login'), login_path %></li>
+        <li class = "ml-2 float-left"><%= link_to (t 'defaults.signup'), new_user_path, class: 'nav-link' %></li>
+        <li class = "ml-2"><%= link_to (t 'defaults.login'), login_path, class: 'nav-link' %></li>
       </ul>
     </nav>
   </div>

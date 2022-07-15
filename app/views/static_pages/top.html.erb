@@ -1,21 +1,24 @@
-<div class = "top-wrapper">
-  <h1>StaticPages#top</h1>
-  <p>Find me in app/views/static_pages/top.html.erb</p>
-  <p>test</p>
-  <p>test</p>
-  <p>test</p>
-  <p>test</p>
-  <p>test</p>
-  <p>test</p>
-  <p>test</p>
-  <nav>
-    <ul>
-      <% if logged_in? %>
-        <li><%= link_to "問題を解く", categorize1_question_path(current_user) %></li>
-      <% else %>
-        <li><%= link_to '問題を解く', '/guest_login', method: :post %></li>
-      <% end %>
-    </ul>
-  </nav>
+<div class="w-4/5 container mx-auto">
+  <div>
   <br>
+    <div class="font-serif text-6xl text-center">
+      <h1>ガス主任技術者試験道場</h1>
+    </div>
+    <br>
+    <div class="text-2xl">
+      <p>
+        「ガス主任技術者試験道場」は、ガス主任技術者試験過去問題の中からランダムに出題するWeb問題集です。スキマ時間を活用して過去問演習に取り組めて、無料・PC/スマホ/タブレット対応・学習履歴管理可能です。試験対策としてご活用ください。
+      </p>
+    </div>
+    <br>
+    <div class="text-center">
+      <ul>
+        <% if logged_in? %>
+          <li><%= link_to "問題を解く", categorize1_question_path(current_user) %></li>
+        <% else %>
+          <li><%= link_to '問題を解く', '/guest_login', method: :post %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
