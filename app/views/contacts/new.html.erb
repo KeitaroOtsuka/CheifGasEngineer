@@ -1,12 +1,11 @@
 <%= form_with(model: @contact, local: true) do |f| %>
   <div class="w-4/5 container mx-auto text-center">
-    <div>
-      <div class="text-4xl font-extrabold">
-        <h5>
-          お問い合わせフォーム
-        </h5>
-      </div>
+    <div class="text-4xl font-extrabold">
+      <h5>
+        お問い合わせフォーム
+      </h5>
     </div>
+    <br>
     <div class="correct-msg-box">
       <% if @contact.errors.any? %>
         <div id="error_explanation">
@@ -17,16 +16,17 @@
         </div>
       <% end %>
       <div>
-        <div>
-          <div class="inner-shadow">
+        <div class="bg-slate-200">
+          <div>
             <%= f.label "お名前" %>
             <br>
-            <%= f.text_field :name, placeholder: "お名前", class: "input-form" %>
+            <%= f.text_field :name, placeholder: "てくてくボーイズ", class: "w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50" %>
           </div>
+          <br>
           <div class="correct-text-field">
             <%= f.label "お問合せ内容" %>
             <br>
-            <%= f.text_area :content, placeholder: "お問合せ内容を入力してください", class: "input-form" %>
+            <%= f.text_area :content, placeholder: "お問合せ内容を入力してください", class: "w-full py-2 border-b focus:outline-none focus:border-b-2 focus:border-indigo-500 placeholder-gray-500 placeholder-opacity-50" %>
           </div>
           <div class="send-btn-contents">
             <div class="register-btn">
@@ -34,10 +34,10 @@
                 送信 <i class="fas fa-paper-plane"></i>
               <% end %>
             </div>
-            <div class="register-btn">
-              <%= link_to "もどる", root_path, class:"register-red-btn", style:"background-color: #aaa" %>
-            </div>
           </div>
+        </div>
+        <div class="register-btn">
+          <%= link_to "もどる", root_path, class:"register-red-btn", style:"background-color: #aaa" %>
         </div>
       </div>
     </div>
