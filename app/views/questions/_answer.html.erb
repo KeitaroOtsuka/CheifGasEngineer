@@ -1,6 +1,8 @@
 <% question.choices.each do |question_choice| %>
   <div class="flex justify-center">
-    <%= link_to question_choice.choice1, result_question_path(choice_number: 1,question_id: question.id, choice_id: question_choice. id) %>
+    <%= link_to results_path(choice_number: 1,question_id: question.id, choice_id: question_choice. id), id: "js-result-choice-for-question-#{question.id}", mehtod: :post, local: true do %>
+      <%= question_choice.choice1 %>
+    <% end %>
     <div class="ml-1"><%= link_to question_choice.choice2, result_question_path(choice_number: 2,question_id: question.id, choice_id: question_choice.id) %></div>
     <div class="ml-1"><%= link_to question_choice.choice3, result_question_path(choice_number: 3,question_id: question.id, choice_id: question_choice.id) %></div>
     <div class="ml-1"><%= link_to question_choice.choice4, result_question_path(choice_number: 4,question_id: question.id, choice_id: question_choice.id) %></div>
