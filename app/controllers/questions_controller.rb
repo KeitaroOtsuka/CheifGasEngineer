@@ -60,13 +60,4 @@ class QuestionsController < ApplicationController
   def show_gijutsu_kou
     @questions = Question.where(exam_id: 9).or(Question.where(exam_id: 12)).order("RANDOM()").limit(20)
   end
-
-  def result
-    @result = current_user.results.build(question_id: params[:question_id])
-    if @result.save
-      @result_choice = @result.result_choices.build(result_id: @result.id, choice_id: params[:choice_id])
-      @result_choice.save
-    end
-    redirect_to root_path
-  end
 end

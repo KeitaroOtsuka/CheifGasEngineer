@@ -32,7 +32,6 @@ Rails.application.routes.draw do
       get :show_houki_kou
       get :show_kiso_kou
       get :show_gijutsu_kou
-      get :result
     end
   end
   resources :results, only: [:create]
