@@ -5,8 +5,8 @@
       <%= image_tag 'top-logo.png', :width => '500', :height => '150' %>
     <% end %>
     <div class="flex items-center lg:order-2">
-      <div class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
-        <%= link_to (t 'defaults.group_search'), groups_path, class: 'nav-link' %>
+      <div class="text-white text-opacity-75 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+        <%= link_to (t 'defaults.group_search'), groups_path, class: "hover:text-white" %>
       </div>
       <div x-data="{ open: false }" class="dark:bg-gray-800 w-64 flex justify-center items-center">
         <div @click="open = !open" class="relative border-b-4 border-transparent py-3" :class="{'border-indigo-700 transform transition duration-300 ': open}" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100">
@@ -26,7 +26,7 @@
                 <div class="flex items-center transform transition-colors duration-200 border-r-4 border-transparent hover:border-indigo-700">
                   <% if current_user.groups.present? %>
                     <% current_user.groups.each do |group| %>
-                      <%= link_to group.name, group_path(group), class: 'dropdown-item' %>
+                      <%= link_to group.name, group_path(group) %>
                     <% end %>
                   <% else %>
                     <p class = 'dropdown-item'>無所属</p>

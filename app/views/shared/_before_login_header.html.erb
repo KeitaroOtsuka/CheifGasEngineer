@@ -4,11 +4,11 @@
       <%= image_tag 'top-logo.png', :width => '500', :height => '150' %>
     <% end %>
     <div class="flex items-center lg:order-2">
-      <div class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
-        <%= link_to (t 'defaults.signup'), new_user_path %>
+      <div class="text-white text-opacity-75 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+        <%= link_to (t 'defaults.signup'), new_user_path, class: "hover:text-white" %>
       </div>
       <div class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-        <%= link_to (t 'defaults.login'), login_path %>
+        <%= link_to (t 'defaults.login'), login_path, class: "hover:text-white" %>
       </div>
     </div>
   </div>
