@@ -3,11 +3,11 @@
 <%= link_to "分野別に問題を解く", category_questions_path %>
 <% @questions.each do |question| %>
   <h3>甲</h1>
-    <%= link_to "令和２年度", year_question_path(current_user) %>
+    <%= link_to "令和２年度", year_question_path(exam_id: question.exam_id)) %>
     <br>
-    <%= link_to "令和３年度", year_question_path(current_user) %>
+    <%= link_to "令和３年度", year_question_path(exam_id: 10)) %>
   <h3>乙</h1>
-    <%= link_to "令和２年度", year_question_path(current_user) %>
+    <%= link_to "令和２年度", year_question_path(exam_id: 1)) %>
     <br>
-    <%= link_to "令和３年度", year_question_path(current_user) %>
+    <%= link_to "令和３年度", year_question_path(exam_id: 4)) %>
 <% end %>
