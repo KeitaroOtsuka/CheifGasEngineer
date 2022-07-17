@@ -3,14 +3,14 @@
 <%= link_to "年度別に問題を解く", year_questions_path %>
 <%= link_to "分野別に問題を解く", category_questions_path %>
 <h3>甲</h1>
-  <%= link_to "法規", show_houki_kou_category_question_path(current_user) %>
+  <%= link_to "法規", category_question_path(current_user, exam_id: 7) %>
   <br>
-  <%= link_to "基礎", show_kiso_kou_category_question_path(current_user) %>
+  <%= link_to "基礎", category_question_path(current_user, exam_id: 8) %>
   <br>
-  <%= link_to "ガス技術", show_gijutsu_kou_category_question_path(current_user) %>
+  <%= link_to "ガス技術", category_question_path(current_user, exam_id: 9) %>
 <h3>乙</h1>
-  <%= link_to "法規", show_houki_otsu_category_question_path(current_user) %>
+  <%= link_to "法規", category_question_path(current_user, exam_id: 1) %>
   <br>
-  <%= link_to "基礎", show_kiso_otsu_category_question_path(current_user) %>
+  <%= link_to "基礎", category_question_path(current_user, exam_id: 2) %>
   <br>
-  <%= link_to "ガス技術", show_gijutsu_otsu_category_question_path(current_user) %>
+  <%= link_to "ガス技術", category_question_path(current_user, exam_id: 3) %>
