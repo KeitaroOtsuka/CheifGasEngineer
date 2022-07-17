@@ -34,6 +34,7 @@
           <% if question.sub_sentence5.present? %>
             <p class="mt-2 text-black"><%= question.sub_sentence5 %></p>
           <% end %>
+          <br>
           <%= render partial: 'answer', locals: { question: question } %>
         </div>
       </div>
