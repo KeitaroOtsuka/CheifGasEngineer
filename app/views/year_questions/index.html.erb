@@ -10,26 +10,32 @@
       <%= link_to "分野別に問題を解く", category_questions_path %>
     </div>
   </div>
-  <div class="text-center mt-5">
+  <div class="text-center mt-5 flex justify-evenly">
     <div>
-      <div class="inline-block text-2xl">
+      <div class="inline-block text-3xl">
         <h3>甲</h1>
       </div>
-      <div class="inline-block">
-        <%= link_to "令和２年度", year_question_path(current_user, exam_id: 10) %>
-        <br>
-        <%= link_to "令和３年度", year_question_path(current_user, exam_id: 7) %>
+      <div class="mt-4">
+        <div class="mb-1">
+          <%= link_to "令和２年度", year_question_path(current_user, exam_id: 10) %>
+        </div>
+        <div class="mb-1">
+          <%= link_to "令和３年度", year_question_path(current_user, exam_id: 7) %>
+        </div>
       </div>
     </div>
   <br>
     <div>
-      <div class="inline-block text-2xl">
+      <div class="inline-block text-3xl">
         <h3>乙</h1>
       </div>
-      <div class="inline-block">
-        <%= link_to "令和２年度", year_question_path(current_user, exam_id: 1) %>
-        <br>
-        <%= link_to "令和３年度", year_question_path(current_user, exam_id: 4) %>
+      <div class="mt-4">
+        <div class="mb-1">
+          <%= link_to "令和２年度", year_question_path(current_user, exam_id: 1) %>
+        </div>
+        <div class="mb-1">
+          <%= link_to "令和３年度", year_question_path(current_user, exam_id: 4) %>
+        </div>
       </div>
     </div>
   </div>

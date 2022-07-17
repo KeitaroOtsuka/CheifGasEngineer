@@ -14,9 +14,9 @@
     <div class="text-center">
       <ul>
         <% if logged_in? %>
-          <li><%= link_to "問題を解く", year_questions_path(current_user) %></li>
+          <li class="text-white hover:text-white text-xl mt-6 btn bg-indigo-600 hover:bg-indigo-700 "><%= link_to "問題を解いてみる", year_questions_path(current_user), class: "hover:text-white" %></li>
         <% else %>
-          <li><%= link_to '問題を解く', '/guest_login', method: :post %></li>
+          <li class="text-white hover:text-white text-xl mt-6 btn bg-indigo-600 hover:bg-indigo-700 "><%= link_to '問題を解いてみる', '/guest_login', method: :post, class: "hover:text-white" %></li>
         <% end %>
       </ul>
     </div>
