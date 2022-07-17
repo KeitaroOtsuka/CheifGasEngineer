@@ -18,17 +18,19 @@ Rails.application.routes.draw do
     end
   end
   resources :password_resets, only: %i[new create edit update]
-  resources :questions, only: %i[show] do
+  resources :year_questions, only: %i[index show] do
     member do
-      get :categorize1
-      get :categorize2
       get :show_reiwa2_otsu
       get :show_reiwa3_otsu
+      get :show_reiwa2_kou
+      get :show_reiwa3_kou
+    end
+  end
+  resources :category_questions, only: %i[index show] do
+    member do
       get :show_houki_otsu
       get :show_kiso_otsu
       get :show_gijutsu_otsu
-      get :show_reiwa2_kou
-      get :show_reiwa3_kou
       get :show_houki_kou
       get :show_kiso_kou
       get :show_gijutsu_kou

@@ -1,0 +1,11 @@
+<h1>過去問道場</h1>
+<%= link_to "年度別に問題を解く", year_questions_path %>
+<%= link_to "分野別に問題を解く", category_questions_path %>
+<h3>甲</h1>
+  <%= link_to "令和２年度", show_reiwa2_kou_year_question_path(current_user) %>
+  <br>
+  <%= link_to "令和３年度", show_reiwa3_kou_year_question_path(current_user) %>
+<h3>乙</h1>
+  <%= link_to "令和２年度", show_reiwa2_otsu_year_question_path(current_user) %>
+  <br>
+  <%= link_to "令和３年度", show_reiwa3_otsu_year_question_path(current_user) %>

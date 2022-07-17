@@ -14,7 +14,7 @@
     <div class="text-center">
       <ul>
         <% if logged_in? %>
-          <li><%= link_to "問題を解く", categorize1_question_path(current_user) %></li>
+          <li><%= link_to "問題を解く", year_questions_path(current_user) %></li>
         <% else %>
           <li><%= link_to '問題を解く', '/guest_login', method: :post %></li>
         <% end %>
