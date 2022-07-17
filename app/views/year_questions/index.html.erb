@@ -1,11 +1,36 @@
-<h1>過去問道場</h1>
-<%= link_to "年度別に問題を解く", year_questions_path %>
-<%= link_to "分野別に問題を解く", category_questions_path %>
-  <h3>甲</h1>
-    <%= link_to "令和２年度", year_question_path(current_user, exam_id: 10) %>
-    <br>
-    <%= link_to "令和３年度", year_question_path(current_user, exam_id: 7) %>
-  <h3>乙</h1>
-    <%= link_to "令和２年度", year_question_path(current_user, exam_id: 1) %>
-    <br>
-    <%= link_to "令和３年度", year_question_path(current_user, exam_id: 4) %>
+<div class="w-4/5 container mx-auto">
+  <div class="text-center text-6xl font-extrabold font-serif mt-2 mb-4">
+    <h1>過去問道場</h1>
+  </div>
+  <div class="text-center border-solid border-b-2 border-gray-600 pb-4">
+    <div class="border-solid border-b-2 border-blue-600 text-blue-600 mx-3 pb-1 inline-block text-2xl">
+      <%= link_to "年度別に問題を解く", year_questions_path, class: "mx-3" %>
+    </div>
+    <div class="inline-block text-2xl">
+      <%= link_to "分野別に問題を解く", category_questions_path %>
+    </div>
+  </div>
+  <div class="text-center mt-5">
+    <div>
+      <div class="inline-block text-2xl">
+        <h3>甲</h1>
+      </div>
+      <div class="inline-block">
+        <%= link_to "令和２年度", year_question_path(current_user, exam_id: 10) %>
+        <br>
+        <%= link_to "令和３年度", year_question_path(current_user, exam_id: 7) %>
+      </div>
+    </div>
+  <br>
+    <div>
+      <div class="inline-block text-2xl">
+        <h3>乙</h1>
+      </div>
+      <div class="inline-block">
+        <%= link_to "令和２年度", year_question_path(current_user, exam_id: 1) %>
+        <br>
+        <%= link_to "令和３年度", year_question_path(current_user, exam_id: 4) %>
+      </div>
+    </div>
+  </div>
+</div>
