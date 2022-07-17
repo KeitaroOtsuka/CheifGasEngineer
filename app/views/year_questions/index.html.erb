@@ -1,11 +1,13 @@
 <h1>過去問道場</h1>
 <%= link_to "年度別に問題を解く", year_questions_path %>
 <%= link_to "分野別に問題を解く", category_questions_path %>
-<h3>甲</h1>
-  <%= link_to "令和２年度", year_question_path(exam_id: 7 || 8 || 9) %>
-  <br>
-  <%= link_to "令和３年度", year_question_path(exam_id: 10 || 11 || 12) %>
-<h3>乙</h1>
-  <%= link_to "令和２年度", year_question_path(exam_id: 1 || 2 || 3) %>
-  <br>
-  <%= link_to "令和３年度", year_question_path(exam_id: 4 || 5 || 6) %>
+<% @questions.each do |question| %>
+  <h3>甲</h1>
+    <%= link_to "令和２年度", year_question_path(current_user) %>
+    <br>
+    <%= link_to "令和３年度", year_question_path(current_user) %>
+  <h3>乙</h1>
+    <%= link_to "令和２年度", year_question_path(current_user) %>
+    <br>
+    <%= link_to "令和３年度", year_question_path(current_user) %>
+<% end %>

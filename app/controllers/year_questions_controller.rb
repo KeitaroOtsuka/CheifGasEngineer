@@ -4,7 +4,8 @@ class YearQuestionsController < ApplicationController
   end
 
   def show
-    show_questions = Question.find(params[:exam_id]).all
+    show_questions = Question.find(exam_id: params[:exam_id]).all
+    binding.pry
     if show_questions.exam_id == 1 || 2 || 3 ?
       a = Question.where(exam_id: 1).order("RANDOM()").limit(16)
       b = Question.where(exam_id: 2).order("RANDOM()").limit(10)
