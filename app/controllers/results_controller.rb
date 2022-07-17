@@ -1,18 +1,15 @@
 class ResultsController < ApplicationController
-  def new
-    @result = Result.new
-  end
-  
   def create
-    @result = Result.new
-    @result.assign_attributes(result_form_params)
-    if @result.save
-      # 成功・失敗の処理
+    @result = current_user.results.build(question_id: params[:question_id])
+    @result.save
+    if params[:choice_number].to_i == Question.find(params[:question_id]).answer
+      @judge = true
+    else
+      @judge = false
     end
-  end
-
-  private
-  def result_form_params
-    params.require(:message_form).permit(:body, pictures_attributes: [:picture]).merge(user_id: current_user)
+    @result_choice = @result.result_choices.build(result_id: @result.id, choice_id: params[:choice_id], judge: @judge)
+    @result_choice.save
+    redirect_to root_path
+    binding.pry
   end
 end

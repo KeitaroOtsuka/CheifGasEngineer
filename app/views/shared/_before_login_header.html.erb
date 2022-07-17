@@ -1,15 +1,15 @@
-<div class = "bg-indigo-700">
-  <div class = "float-left">
+<nav class="bg-indigo-700 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+  <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
     <%= link_to root_path do %>
-      <%= image_tag 'top-logo.png', :width => '400', :height => '150' %>
+      <%= image_tag 'top-logo.png', :width => '500', :height => '150' %>
     <% end %>
+    <div class="flex items-center lg:order-2">
+      <div class="text-white text-opacity-75 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
+        <%= link_to (t 'defaults.signup'), new_user_path, class: "hover:text-white" %>
+      </div>
+      <div class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+        <%= link_to (t 'defaults.login'), login_path, class: "hover:text-white" %>
+      </div>
+    </div>
   </div>
-  <div class = "float-right">
-    <nav>
-      <ul>
-        <li class = "ml-2 float-left"><%= link_to (t 'defaults.signup'), new_user_path, class: 'nav-link' %></li>
-        <li class = "ml-2"><%= link_to (t 'defaults.login'), login_path, class: 'nav-link' %></li>
-      </ul>
-    </nav>
-  </div>
-</div>
+</nav>

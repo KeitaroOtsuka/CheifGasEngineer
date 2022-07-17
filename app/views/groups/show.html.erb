@@ -1,9 +1,9 @@
 <h1><%= t '.title' %></h1>
-  <% unless GroupUser.exists?(group_id: @group.id, user_id: current_user.id) %>
+  <% if !GroupUser.exists?(user_id: current_user.id) %>
     <div class="participation">
       <%= link_to '参加する', join_group_path(@group) %>
     </div>
-  <% else%>
+  <% elsif GroupUser.exists?(group_id: @group.id, user_id: current_user.id) %>
     <div class="participation">
       <%= link_to '退会する', withdrawal_group_path(@group), method: :delete %>
     </div>
