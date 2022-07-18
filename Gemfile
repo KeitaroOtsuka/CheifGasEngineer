@@ -65,6 +65,9 @@ gem 'draper'
 # 日本語翻訳
 gem 'rails-i18n'
 
+# Enum
+gem 'enum_help'
+
 #バイバグ
 gem 'pry-byebug', group: :development
 gem 'pry-rails'
