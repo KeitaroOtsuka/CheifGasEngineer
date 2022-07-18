@@ -1,24 +1,23 @@
 <div class="w-4/5 container mx-auto">
-  <div>
+  <div class="font-serif text-6xl text-center">
+    <h1>ガス主任技術者試験道場</h1>
+  </div>
   <br>
-    <div class="font-serif text-6xl text-center">
-      <h1>ガス主任技術者試験道場</h1>
-    </div>
-    <br>
-    <div class="text-2xl">
-      <p>
-        「ガス主任技術者試験道場」は、ガス主任技術者試験過去問題の中からランダムに出題するWeb問題集です。スキマ時間を活用して過去問演習に取り組めて、無料・PC/スマホ/タブレット対応・学習履歴管理可能です。試験対策としてご活用ください。
-      </p>
-    </div>
-    <br>
-    <div class="text-center">
-      <ul>
-        <% if logged_in? %>
-          <li class="text-white hover:text-white text-xl mt-6 btn bg-indigo-600 hover:bg-indigo-700 "><%= link_to "問題を解いてみる", year_questions_path(current_user), class: "hover:text-white" %></li>
-        <% else %>
-          <li class="text-white hover:text-white text-xl mt-6 btn bg-indigo-600 hover:bg-indigo-700 "><%= link_to '問題を解いてみる', '/guest_login', method: :post, class: "hover:text-white" %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="text-2xl">
+    <p>
+      「ガス主任技術者試験道場」は、ガス主任技術者試験過去問題の中からランダムに出題するWeb問題集です。スキマ時間を活用して過去問演習に取り組めて、無料・PC/スマホ/タブレット対応・学習履歴管理可能です。試験対策としてご活用ください。
+    </p>
+  </div>
+  <br>
+  <div class="text-center">
+    <% if logged_in? %>
+      <div class="text-white hover:text-white text-xl mt-6 btn bg-indigo-600 hover:bg-indigo-700 ">
+        <%= link_to "問題を解いてみる", year_questions_path(current_user), class: "hover:text-white" %>
+      </div>
+    <% else %>
+      <div class="text-white hover:text-white text-xl mt-6 btn bg-indigo-600 hover:bg-indigo-700 ">
+        <%= link_to '問題を解いてみる', '/guest_login', method: :post, class: "hover:text-white" %>
+      </div>
+    <% end %>
   </div>
 </div>

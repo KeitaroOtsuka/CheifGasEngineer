@@ -1,17 +1,29 @@
-<h1><%= t '.title' %></h1>
-<tr>
-  <th scope="row"><%= t(User.human_attribute_name(:avatar)) %></th>
-  <td><%= image_tag current_user.avatar.url, class: 'rounded-circle', size: '50x50' %></td>
-</tr>
-<br>
-<p>UserのID:<%= @user.id %></p>
-<p>Userの名前:<%= @user.first_name %></p>
-<p>Userの名前:<%= @user.last_name %></p>
-<% @user.groups.each do |group| %>
-  <p>所属グループ:<%= group.name %></p>
-<% end %>
-<p>Userのメールアドレス:<%= @user.email %></p>
-
-<% if current_user.id == @user.id %>
-  <%= link_to 'edit', edit_user_path(@user) %>
-<% end %>
+<div class="w-4/5 container mx-auto">
+  <div>
+    <div class="text-4xl font-extrabold mt-2 mb-4 text-center">
+      <h1><%= t '.title' %></h1>
+    </div>
+    <div  class="flex flex-wrap justify-center">
+      <%= image_tag current_user.avatar.url, class:'rounded-circle mr15', size:'150x150' %>
+    </div>
+    </div>
+    <br>
+    <div class="text-center">
+      <p class="text-2xl"><%= @user.decorate.full_name %></p>
+      <br>
+      <div class="w-2/5 mx-auto ">
+        <% @user.groups.each do |group| %>
+          <p class="text-left"><span class="font-bold">所属グループ：</span><%= group.name %></p>
+        <% end %>
+        <br>
+        <p class="text-left"><span class="font-bold">Userのメールアドレス：</span><%= @user.email %></p>
+        <br>
+        <p class="text-left"><span class="font-bold">最近の試験結果：</span></p>
+        <br>
+        <% if current_user.id == @user.id %>
+          <%= link_to '編集する', edit_user_path(@user), class:"btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

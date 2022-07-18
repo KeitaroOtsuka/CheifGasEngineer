@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create show edit update]
   resources :groups do
     collection do
-      get 'search'
+      get :search
     end
     member do
       get :join
