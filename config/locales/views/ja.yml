@@ -38,3 +38,7 @@ ja:
       title: 'グループ詳細ページ'
     edit:
       title: 'グループ編集ページ'
+  password_resets:
+    new:
+      title: 'パスワード再設定用フォーム'
+      send: '再設定用フォームを送る'
