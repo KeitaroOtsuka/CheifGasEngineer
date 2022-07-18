@@ -1,0 +1,72 @@
+<div class="w-4/5 container mx-auto">
+  <div class="text-center text-6xl font-extrabold font-serif mt-2 mb-4">
+    <h1>過去問道場</h1>
+  </div>
+  <div class="text-center border-solid border-b-2 border-gray-600 pb-4">
+    <div class="border-solid border-b-2 border-blue-600 text-blue-600 mx-3 pb-1 inline-block text-2xl">
+      <%= link_to "年度別に問題を解く", year_questions_path, class: "mx-3" %>
+    </div>
+    <div class="inline-block text-2xl">
+      <%= link_to "分野別に問題を解く", category_questions_path %>
+    </div>
+  </div>
+  <div class="text-center mt-5 flex justify-evenly">
+    <div>
+      <div class="inline-block text-3xl">
+        <h3>甲</h1>
+      </div>
+      <div class="mt-4">
+        <div>
+          <div class="mb-1 text-2xl">
+            <%= link_to "令和２年度", year_question_path(current_user, exam_id1: 10, exam_id2: 11, exam_id3: 12), class:"border-bottom" %>
+          </div>
+          <div>
+            <%= link_to "法規", year_question_path(current_user, exam_id1: 10), class:"mx-1 px-1 border-bottom" %>
+            <%= link_to "基礎", year_question_path(current_user, exam_id1: 11,), class:"mx-1 px-1 border-bottom" %>
+            <%= link_to "ガス技術", year_question_path(current_user, exam_id1: 12), class:"mx-1 px-1 border-bottom" %>
+          </div>
+        </div>
+        <br>
+        <div class="mt-2">
+          <div class="mb-1 text-2xl">
+            <%= link_to "令和３年度", year_question_path(current_user, exam_id1: 7, exam_id2: 8, exam_id3: 9), class:"border-bottom" %>
+          </div>
+          <div>
+            <%= link_to "法規", year_question_path(current_user, exam_id1: 7), class:"mx-1 px-1 border-bottom" %>
+            <%= link_to "基礎", year_question_path(current_user, exam_id1: 8), class:"mx-1 px-1 border-bottom" %>
+            <%= link_to "ガス技術", year_question_path(current_user, exam_id1: 9), class:"mx-1 px-1 border-bottom" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <br>
+    <div>
+      <div class="inline-block text-3xl">
+        <h3>乙</h1>
+      </div>
+      <div class="mt-4">
+        <div>
+          <div class="mb-1 text-2xl">
+            <%= link_to "令和２年度", year_question_path(current_user, exam_id1: 1, exam_id2: 2, exam_id3: 3), class:"border-bottom" %>
+          </div>
+          <div>
+            <%= link_to "法規", year_question_path(current_user, exam_id1: 1), class:"mx-1 px-1 border-bottom" %>
+            <%= link_to "基礎", year_question_path(current_user, exam_id1: 2), class:"mx-1 px-1 border-bottom" %>
+            <%= link_to "ガス技術", year_question_path(current_user, exam_id1: 3), class:"mx-1 px-1 border-bottom" %>
+          </div>
+        </div>
+        <br>
+        <div>
+          <div class="mb-1 text-2xl">
+            <%= link_to "令和３年度", year_question_path(current_user, exam_id1: 4, exam_id2: 5, exam_id3: 6), class:"border-bottom" %>
+          </div>
+          <div>
+            <%= link_to "法規", year_question_path(current_user, exam_id1: 4), class:"mx-1 px-1 border-bottom" %>
+            <%= link_to "基礎", year_question_path(current_user, exam_id1: 5), class:"mx-1 px-1 border-bottom" %>
+            <%= link_to "ガス技術", year_question_path(current_user, exam_id1: 6), class:"mx-1 px-1 border-bottom" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create show edit update]
   resources :groups do
     collection do
-      get 'search'
+      get :search
     end
     member do
       get :join
@@ -18,22 +18,8 @@ Rails.application.routes.draw do
     end
   end
   resources :password_resets, only: %i[new create edit update]
-  resources :questions, only: %i[show] do
-    member do
-      get :categorize1
-      get :categorize2
-      get :show_reiwa2_otsu
-      get :show_reiwa3_otsu
-      get :show_houki_otsu
-      get :show_kiso_otsu
-      get :show_gijutsu_otsu
-      get :show_reiwa2_kou
-      get :show_reiwa3_kou
-      get :show_houki_kou
-      get :show_kiso_kou
-      get :show_gijutsu_kou
-    end
-  end
+  resources :year_questions, only: %i[index show]
+  resources :category_questions, only: %i[index show]
   resources :results, only: [:create]
   resources :contacts, only: [:new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
