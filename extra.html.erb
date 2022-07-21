@@ -43,3 +43,16 @@ if params[:exam_id] == 1 || 2 || 3 ?
   <% @user_result_choice = ResultChoice.where(result_id: @user_result.id, choice_id: question.choices.id) %>
   <% binding.pry %>
 <% end %>
+
+<div>
+          <% if Result.where(user_id: current_user.id, question_id: question.id).exists? %>
+            <% @user_result = Result.where(user_id: current_user.id, question_id: question.id) %>
+            <% question.choices.each do |question_choice| %>
+              <% @user_result_choice = ResultChoice.where(result_id: @user_result.id, choice_id: question_choice.id) %>
+            <% end %>
+            <% if @user_result_choice.present? %>
+              <%= render 'results/correct' %>
+            <% end %>
+            <% binding.pry %>
+          <% end %>
+        </div>

@@ -1,1 +1,7 @@
-$("js-result-choice-for-question-#{@question.id}").replaceWith("<%= j(render('boards/unbookmark', question: @question)) %>");
+if ("<% @result_choice.judge == true %>") {
+  "<%= j(render('correct', result: @result)) %>"
+}else{
+  "<%= j(render('incorrect', result: @result)) %>"
+}
+
+console.log($("#js-result-choice-for-question-<%= @result.question_id %>"))

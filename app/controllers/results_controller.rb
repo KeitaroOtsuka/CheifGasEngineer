@@ -9,7 +9,6 @@ class ResultsController < ApplicationController
     end
     @result_choice = @result.result_choices.build(result_id: @result.id, choice_id: params[:choice_id], judge: @judge)
     @result_choice.save
-    redirect_to root_path
-    binding.pry
+    # binding.pry
   end
 end
