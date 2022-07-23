@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_11_062612) do
+ActiveRecord::Schema.define(version: 2022_07_23_073630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,17 @@ ActiveRecord::Schema.define(version: 2022_07_11_062612) do
     t.index ["name"], name: "index_groups_on_name", unique: true
   end
 
+  create_table "question_quizzes", force: :cascade do |t|
+    t.bigint "quiz_id", null: false
+    t.bigint "question_id", null: false
+    t.integer "choice_number"
+    t.boolean "judge"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_question_quizzes_on_question_id"
+    t.index ["quiz_id"], name: "index_question_quizzes_on_quiz_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.bigint "exam_id", null: false
     t.text "sentence"
@@ -87,6 +98,13 @@ ActiveRecord::Schema.define(version: 2022_07_11_062612) do
     t.text "sub_sentence4"
     t.text "sub_sentence5"
     t.index ["exam_id"], name: "index_questions_on_exam_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_quizzes_on_user_id"
   end
 
   create_table "result_choices", force: :cascade do |t|
@@ -138,7 +156,10 @@ ActiveRecord::Schema.define(version: 2022_07_11_062612) do
   add_foreign_key "exams", "years"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "question_quizzes", "questions"
+  add_foreign_key "question_quizzes", "quizzes"
   add_foreign_key "questions", "exams"
+  add_foreign_key "quizzes", "users"
   add_foreign_key "result_choices", "choices"
   add_foreign_key "result_choices", "results"
   add_foreign_key "results", "questions"
