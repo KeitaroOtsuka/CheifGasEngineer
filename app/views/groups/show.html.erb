@@ -1,26 +1,38 @@
-<h1><%= t '.title' %></h1>
-  <% if !GroupUser.exists?(user_id: current_user.id) %>
-    <div class="participation">
-      <%= link_to '参加する', join_group_path(@group) %>
+<div class="w-4/5 container mx-auto">
+  <div>
+    <h1 class="flex justify-center text-4xl font-extrabold mt-2 mb-4"><%= t '.title' %></h1>
+    <div class="flex">
+    <% if !GroupUser.exists?(user_id: current_user.id) %>
+      <div class="participation">
+        <%= link_to '参加する', join_group_path(@group), class:"btn btn-primary" %>
+      </div>
+    <% elsif GroupUser.exists?(group_id: @group.id, user_id: current_user.id) %>
+      <div class="participation">
+        <%= link_to '退会する', withdrawal_group_path(@group), method: :delete, class:"btn btn-danger" %>
+      </div>
+      <div class="inline-block text-right">
+      <%= render partial: 'crud_menus', locals: { group: @group } %>
+      </div>
+    <% end %>
     </div>
-  <% elsif GroupUser.exists?(group_id: @group.id, user_id: current_user.id) %>
-    <div class="participation">
-      <%= link_to '退会する', withdrawal_group_path(@group), method: :delete %>
+    <div>
+      <div class="flex flex-wrap justify-center">
+        <%= image_tag @group.avatar.url, class: 'rounded-circle', size: '150x150' %>
+      </div>
+      <br>
+      <p class="text-2xl text-center border-solid border-bottom font-bold pb-2">メンバー</p>
+      <br>
+      <div class="flex flex-wrap">
+        <% @group.users.each do |group_user| %>
+        <div class="rounded border p-3 w-1/2 text-center px-4">
+          <%= link_to group_user.decorate.full_name, user_path(group_user) %>
+          <% if current_user.admin? %>
+            <%= link_to "退会させる", withdrawal_member_group_path(@group), method: :delete, class:"btn btn-danger mx-4" %>
+          <% end %>
+        </div>
+          <br>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-<tr>
-  <th scope="row"></th>
-  <td><%= image_tag @group.avatar.url, class: 'rounded-square', size: '200x200' %></td>
-</tr>
-<br>
-<p>グループのID:<%= @group.id %></p>
-<p>作成者のID:<%= @group.owner_id %></p>
-<p>メンバー</p>
-<% @group.users.each do |group_user| %>
-  <%= link_to group_user.decorate.full_name, user_path(group_user) %>
-  <% if current_user.admin? %>
-    <%= link_to "退会させる", withdrawal_member_group_path(@group), method: :delete %>
-  <% end %>
-  <br>
-<% end %>
-<%= render 'crud_menus', group: @group %>
+  </div>
+</div>

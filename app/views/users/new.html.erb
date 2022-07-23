@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-      <h1><%= t '.title' %></h1>
+      <h1 class="text-4xl text-center"><%= t '.title' %></h1>
+      <br>
       <%= form_with model: @user, local: true do |f| %>
         <div class="form-group">
           <%= f.label :last_name %>
@@ -26,7 +27,7 @@
         <div class="form-group">
           <%= f.label :certification %>
           <br>
-          <%= f.select :certification, options_for_select(User.certifications), {prompt: "選択してください"}, class: "prefecture-select" %>
+          <%= f.select :certification, options_for_select(User.certifications_i18n.invert), {prompt: "選択してください"}, class: "prefecture-select border-solid border-2 rounded" %>
         </div>
         <div class="form-group">
           <%= f.label :user_image %>
@@ -36,7 +37,7 @@
         <%= f.submit (t 'defaults.register'), class: 'btn btn-primary' %>
       <% end %>
       <div class='text-center'>
-        <%= link_to (t '.to_login_page'), login_path %>
+        <%= link_to (t '.to_login_page'), login_path, class: "border-solid border-bottom" %>
       </div>
     </div>
   </div>

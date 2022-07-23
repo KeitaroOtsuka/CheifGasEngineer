@@ -6,10 +6,8 @@
     <div class="text-white text-opacity-75">
       <%= link_to "プライバシーポリシー", page_path('privacy_policy'), class: "hover:text-white" %>
     </div>
-    <% if logged_in? %>
-      <div class="text-white text-opacity-75">
-        <%= link_to "お問い合わせ", new_contact_path( user_id: current_user.id ), class: "hover:text-white" %>
-      </div>
-    <% end %>
+    <div class="text-white text-opacity-75">
+      <%= link_to "お問い合わせ", new_contact_path, class: "hover:text-white" %>
+    </div>
   </div>
 </div>

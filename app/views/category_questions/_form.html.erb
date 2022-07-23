@@ -60,6 +60,9 @@
         <div>
           <%= render partial: 'answer', locals: { question: question } %>
         </div>
+        <div>
+          <%= link_to '試験結果', result_path(result_choice: @result_choice, current_user) %>
+        </div>
       </div>
     </div>
   </div>

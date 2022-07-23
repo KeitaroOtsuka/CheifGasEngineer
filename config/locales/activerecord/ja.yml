@@ -12,11 +12,12 @@ ja:
       user:
         email: 'メールアドレス'
         password: 'パスワード'
-        password_confirmation: 'パスワード確認'
+        password_confirmation: 'パスワード(確認用)'
         last_name: '姓'
         first_name: '名'
         role: '権限'
         certification: '保有資格'
+        user_image: 'プロフィール画像'
       group:
         name: 'グループ名'
         avatar: 'アバター'
@@ -42,3 +43,9 @@ ja:
         choice3: '3'
         choice4: '4'
         choice5: '5'
+  enums: 
+    user: # モデル名
+      certification: # カラム名
+        non: '未取得' # enumの値
+        otsu: '乙種' # enumの値
+        kou: '甲種' # enumの値

@@ -4,7 +4,7 @@
       <h1><%= t '.title' %></h1>
     </div>
     <div  class="flex flex-wrap justify-center">
-      <%= image_tag current_user.avatar.url, class:'rounded-circle mr15', size:'150x150' %>
+      <%= image_tag @user.avatar.url, size: '150x150', class: 'rounded-circle mr15' %>
     </div>
     </div>
     <br>
@@ -18,7 +18,7 @@
         <br>
         <p class="text-left"><span class="font-bold">Userのメールアドレス：</span><%= @user.email %></p>
         <br>
-        <p class="text-left"><span class="font-bold">最近の試験結果：</span></p>
+        <p class="text-left"><span class="font-bold">最近の試験結果：</span><span class="border-solid text-sky-500"><%= link_to '試験結果', '#' %></span></p>
         <br>
         <% if current_user.id == @user.id %>
           <%= link_to '編集する', edit_user_path(@user), class:"btn btn-primary" %>
