@@ -11,4 +11,9 @@ class ResultsController < ApplicationController
     @result_choice.save
     # binding.pry
   end
+
+  def show
+    @result = params[:result_choice]
+    
+  end
 end

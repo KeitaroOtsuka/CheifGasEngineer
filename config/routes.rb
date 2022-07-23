@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :password_resets, only: %i[new create edit update]
   resources :year_questions, only: %i[index show]
   resources :category_questions, only: %i[index show]
-  resources :results, only: [:create]
+  resources :results, only: [:index, :show, :create]
   resources :contacts, only: [:new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
