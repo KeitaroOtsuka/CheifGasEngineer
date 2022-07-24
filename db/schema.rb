@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_23_073630) do
+ActiveRecord::Schema.define(version: 2022_07_23_154551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,24 @@ ActiveRecord::Schema.define(version: 2022_07_23_073630) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "owner_id", null: false
     t.index ["name"], name: "index_groups_on_name", unique: true
+  end
+
+  create_table "papers", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_papers_on_user_id"
+  end
+
+  create_table "question_papers", force: :cascade do |t|
+    t.bigint "paper_id", null: false
+    t.bigint "question_id", null: false
+    t.integer "choice_number"
+    t.boolean "judge"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["paper_id"], name: "index_question_papers_on_paper_id"
+    t.index ["question_id"], name: "index_question_papers_on_question_id"
   end
 
   create_table "question_quizzes", force: :cascade do |t|
@@ -156,6 +174,9 @@ ActiveRecord::Schema.define(version: 2022_07_23_073630) do
   add_foreign_key "exams", "years"
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+  add_foreign_key "papers", "users"
+  add_foreign_key "question_papers", "papers"
+  add_foreign_key "question_papers", "questions"
   add_foreign_key "question_quizzes", "questions"
   add_foreign_key "question_quizzes", "quizzes"
   add_foreign_key "questions", "exams"

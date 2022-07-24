@@ -18,9 +18,10 @@ Rails.application.routes.draw do
     end
   end
   resources :password_resets, only: %i[new create edit update]
-  resources :year_questions, only: %i[index show]
-  resources :category_questions, only: %i[index show]
+  resources :year_questions, only: %i[index]
+  resources :category_questions, only: %i[index]
   resources :results, only: [:index, :show, :create]
   resources :contacts, only: [:new, :create]
+  resources :question_papers, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
