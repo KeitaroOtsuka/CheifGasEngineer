@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :category_questions, only: %i[index]
   resources :results, only: [:index, :show, :create]
   resources :contacts, only: [:new, :create]
-  resources :question_papers, only: [:index, :show, :update]
+  resources :question_papers, only: [:update]
+  resources :papers
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
