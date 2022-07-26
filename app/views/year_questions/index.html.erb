@@ -18,23 +18,23 @@
       <div class="mt-4">
         <div>
           <div class="mb-1 text-2xl">
-            <%= link_to "令和２年度", papers_path(current_user, exam_id1: 10, exam_id2: 11, exam_id3: 12), class:"border-bottom", method: :post %>
+            <%= link_to "令和２年度", papers_path(current_user, exam_id1: 10, exam_id2: 11, exam_id3: 12), class:"border-bottom", method: :post, data: {confirm: "試験を開始しますか？"} %>
           </div>
           <div>
-            <%= link_to "法規", papers_path(current_user, exam_id1: 10), class:"mx-1 px-1 border-bottom", method: :post %>
-            <%= link_to "基礎", papers_path(current_user, exam_id1: 11,), class:"mx-1 px-1 border-bottom", method: :post %>
-            <%= link_to "ガス技術", papers_path(current_user, exam_id1: 12), class:"mx-1 px-1 border-bottom", method: :post %>
+            <%= link_to "法規", papers_path(current_user, exam_id1: 10), class:"mx-1 px-1 border-bottom", method: :post, data: {confirm: "試験を開始しますか？"} %>
+            <%= link_to "基礎", papers_path(current_user, exam_id1: 11,), class:"mx-1 px-1 border-bottom", method: :post, data: {confirm: "試験を開始しますか？"} %>
+            <%= link_to "ガス技術", papers_path(current_user, exam_id1: 12), class:"mx-1 px-1 border-bottom", method: :post, data: {confirm: "試験を開始しますか？"} %>
           </div>
         </div>
         <br>
         <div class="mt-2">
           <div class="mb-1 text-2xl">
-            <%= link_to "令和３年度", papers_path(current_user, exam_id1: 7, exam_id2: 8, exam_id3: 9), class:"border-bottom", method: :post %>
+            <%= link_to "令和３年度", papers_path(current_user, exam_id1: 7, exam_id2: 8, exam_id3: 9), class:"border-bottom", method: :post, data: {confirm: "試験を開始しますか？"} %>
           </div>
           <div>
-            <%= link_to "法規", papers_path(current_user, exam_id1: 7), class:"mx-1 px-1 border-bottom", method: :post %>
-            <%= link_to "基礎", papers_path(current_user, exam_id1: 8), class:"mx-1 px-1 border-bottom", method: :post %>
-            <%= link_to "ガス技術", papers_path(current_user, exam_id1: 9), class:"mx-1 px-1 border-bottom", method: :post %>
+            <%= link_to "法規", papers_path(current_user, exam_id1: 7), class:"mx-1 px-1 border-bottom", method: :post, data: {confirm: "試験を開始しますか？"} %>
+            <%= link_to "基礎", papers_path(current_user, exam_id1: 8), class:"mx-1 px-1 border-bottom", method: :post, data: {confirm: "試験を開始しますか？"} %>
+            <%= link_to "ガス技術", papers_path(current_user, exam_id1: 9), class:"mx-1 px-1 border-bottom", method: :post, data: {confirm: "試験を開始しますか？"} %>
           </div>
         </div>
       </div>

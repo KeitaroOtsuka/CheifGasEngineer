@@ -8,7 +8,7 @@
       </div>
     <% elsif GroupUser.exists?(group_id: @group.id, user_id: current_user.id) %>
       <div class="participation">
-        <%= link_to '退会する', withdrawal_group_path(@group), method: :delete, class:"btn btn-danger" %>
+        <%= link_to '退会する', withdrawal_group_path(@group), method: :delete, class:"btn btn-danger", data: {confirm: "退会しますか？"} %>
       </div>
       <div class="inline-block text-right">
       <%= render partial: 'crud_menus', locals: { group: @group } %>
@@ -27,7 +27,7 @@
         <div class="rounded border p-3 w-1/2 text-center px-4">
           <%= link_to group_user.decorate.full_name, user_path(group_user) %>
           <% if current_user.admin? %>
-            <%= link_to "退会させる", withdrawal_member_group_path(@group), method: :delete, class:"btn btn-danger mx-4" %>
+            <%= link_to "退会させる", withdrawal_member_group_path(@group), method: :delete, class:"btn btn-danger mx-4", data: {confirm: "退会させますか？"} %>
           <% end %>
         </div>
           <br>
