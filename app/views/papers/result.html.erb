@@ -1,0 +1,73 @@
+<h1>最終結果</h1>
+<% @questions_all = 0 %>
+<% @question_houki_all = 0 %>
+<% @question_kiki_all = 0 %>
+<% @question_gijutu_all = 0 %>
+<% @question_trues = 0 %>
+<% @question_houki_trues = 0 %>
+<% @question_kiki_trues = 0 %>
+<% @question_gijutu_trues = 0 %>
+<% @paper.question_papers.each do |question_paper| %>
+  <% if question_paper.question.exam_id.to_i == 1 && question_paper.judge != nil %>
+    <% @question_houki_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 4 && question_paper.judge != nil %>
+    <% @question_houki_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 7 && question_paper.judge != nil %>
+    <% @question_houki_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 10 && question_paper.judge != nil %>
+    <% @question_houki_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 2 && question_paper.judge != nil %>
+    <% @question_kiki_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 5 && question_paper.judge != nil %>
+    <% @question_kiki_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 8 && question_paper.judge != nil %>
+    <% @question_kiki_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 11 && question_paper.judge != nil %>
+    <% @question_kiki_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 3 && question_paper.judge != nil %>
+    <% @question_gijutu_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 6 && question_paper.judge != nil %>
+    <% @question_gijutu_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 9 && question_paper.judge != nil %>
+    <% @question_gijutu_all += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 12 && question_paper.judge != nil %>
+    <% @question_gijutu_all += 1 %>
+  <% end %>
+  <% if question_paper.question.exam_id.to_i == 1 && question_paper.judge == true %>
+    <% @question_houki_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 4 && question_paper.judge == true %>
+    <% @question_houki_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 7 && question_paper.judge == true %>
+    <% @question_houki_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 10 && question_paper.judge == true %>
+    <% @question_houki_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 2 && question_paper.judge == true %>
+    <% @question_kiki_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 5 && question_paper.judge == true %>
+    <% @question_kiki_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 8 && question_paper.judge == true %>
+    <% @question_kiki_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 11 && question_paper.judge == true %>
+    <% @question_kiki_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 3 && question_paper.judge == true %>
+    <% @question_gijutu_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 6 && question_paper.judge == true %>
+    <% @question_gijutu_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 9 && question_paper.judge == true %>
+    <% @question_gijutu_trues += 1 %>
+  <% elsif question_paper.question.exam_id.to_i == 12 && question_paper.judge == true %>
+    <% @question_gijutu_trues += 1 %>
+  <% end %>
+  <% # binding.pry %>
+<% end %>
+<% @questions_all = @question_houki_all + @question_kiki_all + @question_gijutu_all %>
+<% @question_trues = @question_houki_trues + @question_kiki_trues + @question_gijutu_trues %>
+<%= @question_trues %>/<%= @questions_all %>
+
+<p>法規</p>
+<%= @question_houki_trues %>/<%= @question_houki_all %>
+<p>機器</p>
+<%= @question_kiki_trues %>/<%= @question_kiki_all %>
+<p>ガス技術</p>
+<%= @question_gijutu_trues %>/<%= @question_gijutu_all %>
+

@@ -20,13 +20,14 @@ class UserSessionsController < ApplicationController
 
   def guest_login
     @guest_user = User.create(
-    id: 9999,
+    id: 10001,
+    role: "general",
     first_name: 'ゲスト',
     email: SecureRandom.alphanumeric(10) + "@email.com",
     password: 'password',
     password_confirmation: 'password'
     )
     auto_login(@guest_user)
-    redirect_to categorize1_question_path(@guest_user), success: 'ゲストとしてログインしました'
+    redirect_to year_questions_path(@guest_user), success: 'ゲストとしてログインしました'
   end
 end
