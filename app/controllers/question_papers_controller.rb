@@ -63,4 +63,20 @@ class QuestionPapersController < ApplicationController
     end
     # binding.pry
   end
+
+  def show
+    @question_papers = params[:question_papers].map do |question_paper|
+      QuestionPaper.find(question_paper)
+    end
+  end
+
+  def update
+    @question_paper = QuestionPaper.find(params[:question_paper])
+    if params[:choice_number] == @question_paper[0].question.answer
+      @judge = true
+    else
+      @judge = false
+    end
+    @question_paper.update(choice_number: params[:choice_number], judge: @judge)
+  end
 end

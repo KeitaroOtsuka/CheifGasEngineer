@@ -1,0 +1,48 @@
+
+<% @question_papers.each do |question_paper| %>
+<% num = 0 %>
+  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-1">
+    <div class="md:flex">
+      <div class="p-8">
+        <div class="uppercase tracking-wide text-sm text-black font-semibold"><%= question_paper[num].question.sentence %></div>
+          <% if question_paper[num].question.sub_sentence %>
+            <p class="mt-2 text-black"><%= question_paper[num].question.sub_sentence %></p>
+          <% end %>
+          <br>
+          <% if question_paper[num].question.sub_sentence2 %>
+            <p class="mt-2 text-black"><%= question_paper[num].question.sub_sentence2 %></p>
+          <% end %>
+          <% if question_paper[num].question.sub_sentence3 %>
+            <p class="mt-2 text-black"><%= question_paper[num].question.sub_sentence3 %></p>
+          <% end %>
+          <% if question_paper[num].question.sub_sentence4 %>
+            <p class="mt-2 text-black"><%= question_paper[num].question.sub_sentence4 %></p>
+          <% end %>
+          <% if question_paper[num].question.supplement1 %>
+            <p class="mt-2 text-black">(1)　<%= question_paper[num].question.supplement1 %></p>
+          <% end %>
+          <% if question_paper[num].question.supplement2 %>
+            <p class="mt-2 text-black">(2)　<%= question_paper[num].question.supplement2 %></p>
+          <% end %>
+          <% if question_paper[num].question.supplement3 %>
+            <p class="mt-2 text-black">(3)　<%= question_paper[num].question.supplement3 %></p>
+          <% end %>
+          <% if question_paper[num].question.supplement4 %>
+            <p class="mt-2 text-black">(4)　<%= question_paper[num].question.supplement4 %></p>
+          <% end %>
+          <% if question_paper[num].question.supplement5 %>
+            <p class="mt-2 text-black">(5)　<%= question_paper[num].question.supplement5 %></p>
+          <% end %>
+          <% if question_paper[num].question.sub_sentence5 %>
+            <p class="mt-2 text-black"><%= question_paper[num].question.sub_sentence5 %></p>
+          <% end %>
+          <br>
+          <%= render partial: 'answer', locals: { question: question_paper[num].question, question_paper: question_paper[num] } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% num += 1 %>
+<% end %>
+<br>
+<%= link_to "戻る", year_questions_path %>
