@@ -1,0 +1,55 @@
+<% @paper.question_papers.each do |question_paper| %>
+  <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-1">
+    <div class="md:flex">
+      <div class="p-8">
+        <div class="uppercase tracking-wide text-sm text-black font-semibold"><%= question_paper.question.sentence %></div>
+          <% if question_paper.question.sub_sentence %>
+            <p class="mt-2 text-black"><%= question_paper.question.sub_sentence %></p>
+          <% end %>
+          <br>
+          <% if question_paper.question.sub_sentence2 %>
+            <p class="mt-2 text-black"><%= question_paper.question.sub_sentence2 %></p>
+          <% end %>
+          <% if question_paper.question.sub_sentence3 %>
+            <p class="mt-2 text-black"><%= question_paper.question.sub_sentence3 %></p>
+          <% end %>
+          <% if question_paper.question.sub_sentence4 %>
+            <p class="mt-2 text-black"><%= question_paper.question.sub_sentence4 %></p>
+          <% end %>
+          <% if question_paper.question.supplement1 %>
+            <p class="mt-2 text-black">(1)　<%= question_paper.question.supplement1 %></p>
+          <% end %>
+          <% if question_paper.question.supplement2 %>
+            <p class="mt-2 text-black">(2)　<%= question_paper.question.supplement2 %></p>
+          <% end %>
+          <% if question_paper.question.supplement3 %>
+            <p class="mt-2 text-black">(3)　<%= question_paper.question.supplement3 %></p>
+          <% end %>
+          <% if question_paper.question.supplement4 %>
+            <p class="mt-2 text-black">(4)　<%= question_paper.question.supplement4 %></p>
+          <% end %>
+          <% if question_paper.question.supplement5 %>
+            <p class="mt-2 text-black">(5)　<%= question_paper.question.supplement5 %></p>
+          <% end %>
+          <% if question_paper.question.sub_sentence5 %>
+            <p class="mt-2 text-black"><%= question_paper.question.sub_sentence5 %></p>
+          <% end %>
+          <br>
+          <%= render partial: 'answer', locals: { question: question_paper.question, question_paper: question_paper } %>
+          <% if question_paper.judge == true %>
+            <%= render partial: 'true', locals: { question: question_paper.question, question_paper: question_paper } %>
+          <% elsif question_paper.judge == false %>
+            <%= render partial: 'false', locals: { question: question_paper.question, question_paper: question_paper } %>
+          <% else %>
+            <%= render partial: 'aaa', locals: { question: question_paper.question, question_paper: question_paper } %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<br>
+<div class="text-center">
+  <%= link_to '結果を見る', result_paper_path(@paper), class:"btn btn-primary"%>
+</div>
+<br>
