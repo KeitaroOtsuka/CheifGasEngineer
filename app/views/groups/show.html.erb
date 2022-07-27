@@ -3,15 +3,12 @@
     <h1 class="flex justify-center text-4xl font-extrabold mt-2 mb-4"><%= t '.title' %></h1>
     <div class="flex">
     <% if !GroupUser.exists?(user_id: current_user.id) %>
-      <div class="participation">
+      <div>
         <%= link_to '参加する', join_group_path(@group), class:"btn btn-primary" %>
       </div>
     <% elsif GroupUser.exists?(group_id: @group.id, user_id: current_user.id) %>
-      <div class="participation">
-        <%= link_to '退会する', withdrawal_group_path(@group), method: :delete, class:"btn btn-danger", data: {confirm: "退会しますか？"} %>
-      </div>
-      <div class="inline-block text-right">
-      <%= render partial: 'crud_menus', locals: { group: @group } %>
+      <div>
+          <%= link_to '退会する', withdrawal_group_path(@group), method: :delete, class:"btn btn-danger", data: {confirm: "退会しますか？"} %>
       </div>
     <% end %>
     </div>
@@ -33,6 +30,10 @@
           <br>
         <% end %>
       </div>
+      <div> 
+        <%= render partial: 'crud_menus', locals: { group: @group } %>
+      </div>
     </div>
   </div>
 </div>
+
