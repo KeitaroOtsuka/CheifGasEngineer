@@ -29,6 +29,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def result
+    @user = User.find(params[:id])
+    if  Paper.exists?(user_id: @user.id)
+      @paper = Paper.where(user_id: @user.id).order(id: "DESC").limit(1)
+    else
+      flash[:danger] = "試験結果が存在しません。"
+      redirect_back fallback_location: root_path
+    end
+    # binding.pry
+  end
+
   private
   def set_users
     @user = User.find(params[:id])
