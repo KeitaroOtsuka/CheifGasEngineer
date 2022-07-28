@@ -54,8 +54,9 @@ class GroupsController < ApplicationController
   end
 
   def withdrawal_member
-    @group.users.delete(user)
-    redirect_to group_path(@group)
+    @group_user = GroupUser.find_by(user_id: params[:user_id],group_id: params[:id])
+    @group_user.destroy
+    redirect_back fallback_location: root_path
   end
 
   def search

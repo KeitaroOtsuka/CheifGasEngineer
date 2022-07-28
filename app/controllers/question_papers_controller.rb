@@ -8,7 +8,7 @@ class QuestionPapersController < ApplicationController
       @judge = false
     end
     @question_paper.update(choice_number: params[:choice_number], judge: @judge)
-    redirect_to paper_path(@question_paper.paper_id)
+    # redirect_to paper_path(@question_paper.paper_id)
     # binding.pry
   end
 end
