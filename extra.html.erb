@@ -115,3 +115,7 @@ if params[:exam_id] == 1 || 2 || 3 ?
 <% end %>
 <br>
 <%= link_to "戻る", year_questions_path %>
+
+$('.judges').html("<%= j(render partial: 'papers/judge', locals: { question: question_paper.question, question_paper: question_paper }) %>");
+
+$('.judges').html("<%= j(render partial: 'papers/judge', locals: { question: @question_paper.question, question_paper: @question_paper }) %>");

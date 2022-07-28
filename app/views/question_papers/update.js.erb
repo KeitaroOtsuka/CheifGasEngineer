@@ -1,0 +1,2 @@
+console.log("<%= @question_paper.question_id %>");
+$('#judge_<%= @question_paper.id %>_<%= @question_paper.question_id %>').html("<%= j(render partial: 'question_papers/judge', locals: {question_paper: @question_paper}) %>");

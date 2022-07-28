@@ -174,13 +174,9 @@
           <% end %>
           <br>
           <%= render partial: 'answer', locals: { question: question_paper.question, question_paper: question_paper } %>
-          <% if question_paper.judge == true %>
-            <%= render partial: 'true', locals: { question: question_paper.question, question_paper: question_paper } %>
-          <% elsif question_paper.judge == false %>
-            <%= render partial: 'false', locals: { question: question_paper.question, question_paper: question_paper } %>
-          <% else %>
-            <%= render partial: 'aaa', locals: { question: question_paper.question, question_paper: question_paper } %>
-          <% end %>
+          <div id="judge_<%= question_paper.id %>_<%= question_paper.question.id %>">
+            <%= render partial: 'question_papers/judge', locals: { question: question_paper.question, question_paper: question_paper } %>
+          </div>
         </div>
       </div>
     </div>
