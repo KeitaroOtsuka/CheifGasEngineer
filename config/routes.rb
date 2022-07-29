@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       delete :withdrawal_member
     end
   end
+  resources :questions, only: %i[new]
   resources :password_resets, only: %i[new create edit update]
   resources :year_questions, only: %i[index]
   resources :category_questions, only: %i[index]
