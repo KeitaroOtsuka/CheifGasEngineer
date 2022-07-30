@@ -1,4 +1,5 @@
 class PapersController < ApplicationController
+  skip_before_action :require_login, only: %i[create]
   def create
     if logged_in?
       @paper = Paper.create(user_id: current_user.id)
