@@ -52,6 +52,8 @@ GEM
     activerecord (6.1.6)
       activemodel (= 6.1.6)
       activesupport (= 6.1.6)
+    activerecord-import (1.4.0)
+      activerecord (>= 4.2)
     activestorage (6.1.6)
       actionpack (= 6.1.6)
       activejob (= 6.1.6)
@@ -202,6 +204,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.6-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.6-x86_64-linux)
+      racc (~> 1.4)
     oauth (0.5.10)
     oauth2 (1.4.9)
       faraday (>= 0.17.3, < 3.0)
@@ -331,8 +335,10 @@ GEM
 PLATFORMS
   x86_64-darwin-20
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
+  activerecord-import
   byebug
   carrierwave (~> 2.0)
   config (= 2.2.1)
