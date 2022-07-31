@@ -4,8 +4,9 @@ class PapersController < ApplicationController
     if logged_in?
       @paper = Paper.create(user_id: current_user.id)
     else
-      @paper = Paper.create(user_id: 9999)
+      @paper = Paper.create(user_id: 4)
     end
+    # binding.pry
     if params[:exam_id1].to_i == 1 && params[:exam_id2].to_i == 2 && params[:exam_id3].to_i == 3
       a = Question.where(exam_id: 1).order("RANDOM()").limit(16)
       b = Question.where(exam_id: 2).order("RANDOM()").limit(10)
