@@ -11,14 +11,8 @@
   </div>
   <br>
   <div class="text-center">
-    <% if logged_in? %>
-      <div class="text-white hover:text-white text-xl mt-6 btn bg-indigo-600 hover:bg-indigo-700 ">
-        <%= link_to "問題を解いてみる", year_questions_path, class: "hover:text-white" %>
-      </div>
-    <% else %>
-      <div class="text-white hover:text-white text-xl mt-6 btn bg-indigo-600 hover:bg-indigo-700 ">
-        <%= link_to '問題を解いてみる', '/guest_login', method: :post, class: "hover:text-white" %>
-      </div>
-    <% end %>
+    <div class="text-white hover:text-white text-xl mt-6 btn bg-indigo-600 hover:bg-indigo-700 ">
+      <%= link_to "問題を解いてみる", year_questions_path, class: "hover:text-white" %>
+    </div>
   </div>
 </div>
