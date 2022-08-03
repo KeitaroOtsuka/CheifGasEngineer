@@ -1,5 +1,5 @@
 <% if question_paper.judge == true %>
-  <%= render partial: 'true', locals: { question: question_paper.question, question_paper: question_paper } %>
+  <%= render partial: 'question_papers/true', locals: { question: question_paper.question, question_paper: question_paper } %>
 <% elsif question_paper.judge == false %>
-  <%= render partial: 'false', locals: { question: question_paper.question, question_paper: question_paper } %>
+  <%= render partial: 'question_papers/false', locals: { question: question_paper.question, question_paper: question_paper } %>
 <% end %>

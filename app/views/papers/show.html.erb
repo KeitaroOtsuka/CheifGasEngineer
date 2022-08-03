@@ -1,7 +1,9 @@
-<% @paper.question_papers.each do |question_paper| %>
+<% @paper.question_papers.each.with_index(1) do |question_paper, i| %>
   <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-1">
     <div class="md:flex">
       <div class="p-8">
+        <p class="text-xl font-normal">問.<%= i %></p>
+        <br>
         <div class="uppercase tracking-wide text-sm text-black font-semibold"><%= question_paper.question.sentence %></div>
         <% if question_paper.question.id == 99 %>
           <%= image_tag 'q_kou_r2_g10.png' %>
