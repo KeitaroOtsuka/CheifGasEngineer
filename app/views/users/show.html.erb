@@ -13,10 +13,8 @@
       <br>
       <div class="w-2/5 mx-auto ">
         <% @user.groups.each do |group| %>
-          <p class="text-left"><span class="font-bold">所属グループ：</span><%= group.name %></p>
+          <p class="text-left"><span class="font-bold">所属グループ：</span><%= link_to group.name, group_path(group) %></p>
         <% end %>
-        <br>
-        <p class="text-left"><span class="font-bold">Userのメールアドレス：</span><%= @user.email %></p>
         <br>
         <p class="text-left"><span class="font-bold">最近の試験結果：</span><span class="border-solid text-sky-500"><%= link_to '試験結果', result_user_path(@user) %></span></p>
         <br>
