@@ -13,37 +13,39 @@
   <% if !current_user.groups.present? && current_user.kou? || current_user.admin? %>
       <%= link_to "グループ作成", new_group_path, class: "btn btn-primary" %>
   <% end %>
-    <div class="row">
-      <div class="col-12">
-        <div class="row">
-          <% if @groups.present? %>
-            <div class='col-md-8 offset-md-1'>
-                <table class='table table-hover table-inverse'>
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>グループ名</th>
-                      <th colspan="3"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <% @groups.each do |group| %>
-                  <tr>
-                    <td><%= image_tag group.avatar.url, class: 'rounded-circle', size: '100x100' %></td>
-                    <td><%= link_to group.name, group_path(group) %></td>
-                  </tr>
-                  <% end %>
-                  </tbody>
-                </table>
-            </div>
-          <% else %>
-            <p>NO RESULT</p>
-          <% end %>
+  <% if @groups.present? %>
+    <div class='col-md-10 offset-md-1'>
+      <table class='table table-hover table-inverse'>
+        <thead>
           <tr>
-            <td><%= paginate @groups %></td>
+            <th></th>
+            <th>グループ名</th>
+            <th colspan="3"></th>
           </tr>
-        </div>
-      </div>
+        </thead>
+        <tbody>
+        <% @groups.each do |group| %>
+          <tr>
+            <td>
+              <%= link_to(group_path(group)) do %>
+                <%= image_tag group.avatar.url, class: 'rounded-circle', size: '100x100' %>
+              <% end %>
+            </td>
+            <td class="align-middle">
+              <%= link_to(group_path(group)) do %>
+                <%= group.name %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
     </div>
+  <% else %>
+    <p>NO RESULT</p>
+  <% end %>
+  <div class="flex justify-center">
+    <%= paginate @groups %>
   </div>
+  <br>
 </div>

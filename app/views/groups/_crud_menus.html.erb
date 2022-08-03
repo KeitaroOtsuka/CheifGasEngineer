@@ -1,7 +1,11 @@
 <% if current_user.own?(group) || current_user.admin? %>
-  <div class="flex justify-right">
-    <%= link_to "編集", edit_group_path(group),class:"text-right inline-block" %>
-    <%= link_to "削除", group_path(group), method: :delete,class:"text-right inline-block", data: {confirm: "グループを削除しますか？"} %>
+  <div class="flex">
+    <div class="px-1">
+      <%= link_to "編集", edit_group_path(group),class:"btn btn-primary " %>
+    </div>
+    <div class="px-1">
+      <%= link_to "削除", group_path(group), method: :delete,class:"btn btn-danger", data: {confirm: "グループを削除しますか？"} %>
+    </div>
   </div>
   <br>
 <% end %>
