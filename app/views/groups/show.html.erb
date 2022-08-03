@@ -1,16 +1,20 @@
 <div class="w-4/5 container mx-auto">
   <div>
+    <br>
     <h1 class="flex justify-center text-4xl font-extrabold mt-2 mb-4"><%= t '.title' %></h1>
-    <div class="flex">
-    <% if !GroupUser.exists?(user_id: current_user.id) %>
-      <div>
-        <%= link_to '参加する', join_group_path(@group), class:"btn btn-primary" %>
+    <div class="flex justify-between">
+      <% if !GroupUser.exists?(user_id: current_user.id) %>
+        <div>
+          <%= link_to '参加する', join_group_path(@group), class:"btn btn-primary" %>
+        </div>
+      <% elsif GroupUser.exists?(group_id: @group.id, user_id: current_user.id) %>
+        <div>
+            <%= link_to '退会する', withdrawal_group_path(@group), method: :delete, class:"btn btn-danger", data: {confirm: "退会しますか？"} %>
+        </div>
+      <% end %>
+      <div> 
+        <%= render partial: 'crud_menus', locals: { group: @group } %>
       </div>
-    <% elsif GroupUser.exists?(group_id: @group.id, user_id: current_user.id) %>
-      <div>
-          <%= link_to '退会する', withdrawal_group_path(@group), method: :delete, class:"btn btn-danger", data: {confirm: "退会しますか？"} %>
-      </div>
-    <% end %>
     </div>
     <div>
       <div class="flex flex-wrap justify-center">
@@ -23,15 +27,12 @@
         <% @group.users.each do |group_user| %>
         <div class="rounded border p-3 w-1/2 text-center px-4">
           <%= link_to group_user.decorate.full_name, user_path(group_user) %>
-          <% if current_user.admin? %>
-            <%= link_to "退会させる", withdrawal_member_group_path(user_id: group_user.id), method: :delete, class:"btn btn-danger mx-4", data: {confirm: "退会させますか？"} %>
+          <% if current_user.admin? && current_user.id != group_user.id %>
+              <%= link_to "退会させる", withdrawal_member_group_path(user_id: group_user.id), method: :delete, class:"btn btn-danger mx-4", data: {confirm: "退会させますか？"} %>
           <% end %>
         </div>
           <br>
         <% end %>
-      </div>
-      <div> 
-        <%= render partial: 'crud_menus', locals: { group: @group } %>
       </div>
     </div>
   </div>
