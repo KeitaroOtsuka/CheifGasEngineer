@@ -1,0 +1,19 @@
+<% question.choices.each do |question_choice| %>
+  <ul class="flex justify-center">
+    <li class="mx-1 btn  bg-green-500 text-white <%= 'border rounded-md border-4' unless question_paper.choice_number != 1 %>">
+      <%= question_choice.choice1 %>
+    </li>
+    <li class="mx-1 btn  bg-green-500 text-white <%= 'border rounded-md border-4' unless question_paper.choice_number != 2 %>">
+      <%= question_choice.choice2 %>
+    </li>
+    <li class="mx-1 btn  bg-green-500 text-white <%= 'border rounded-md border-4' unless question_paper.choice_number != 3 %>">
+      <%= question_choice.choice3 %>
+    </li>
+    <li class="mx-1 btn  bg-green-500 text-white <%= 'border rounded-md border-4' unless question_paper.choice_number != 4 %>">
+      <%= question_choice.choice4 %>
+    </li>
+    <li class="mx-1 btn  bg-green-500 text-white <%= 'border rounded-md border-4' unless question_paper.choice_number != 5 %>">
+      <%= question_choice.choice5 %>
+    </li>
+  </ul>
+<% end %>
