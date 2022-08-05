@@ -1,21 +1,19 @@
 RailsAdmin.config do |config|
-  config.authorize_with :cancancan
-  config.authenticate_with do
-    # Use sorcery's before filter to auth users
-    require_login
 
-    redirect_to root_path unless current_user&.admin?
+  config.authenticate_with do
+    #sorceryのメソッド
+    require_login
   end
-  config.current_user_method(&:current_user)
   ### Popular gems integration
 
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user
   # end
-  # config.current_user_method(&:current_user)
+  config.current_user_method(&:current_user)
 
   ## == CancanCan ==
+  # config.authorize_with :cancancan
 
   ## == Pundit ==
   # config.authorize_with :pundit

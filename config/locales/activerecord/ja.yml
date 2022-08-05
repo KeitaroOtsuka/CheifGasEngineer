@@ -18,6 +18,7 @@ ja:
         role: '権限'
         certification: '保有資格'
         user_image: 'プロフィール画像'
+        comment: 'ひとこと'
       group:
         name: 'グループ名'
         avatar: 'アバター'

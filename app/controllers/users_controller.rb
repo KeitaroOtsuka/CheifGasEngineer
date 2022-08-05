@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
   before_action :set_users, only: %i[show edit update]
-  load_and_authorize_resource
 
   def new
     @user = User.new
@@ -47,10 +46,10 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :last_name, :first_name, :certification)
+    params.require(:user).permit(:email, :password, :password_confirmation, :last_name, :first_name, :certification, :comment)
   end
   
   def user_update_params
-    params.require(:user).permit(:email, :first_name, :last_name,  :avatar, :avatar_cache)
+    params.require(:user).permit(:email, :first_name, :last_name, :comment, :avatar, :avatar_cache)
   end
 end
