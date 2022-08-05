@@ -30,6 +30,10 @@
           <%= f.select :certification, options_for_select(User.certifications_i18n.invert), {prompt: "選択してください"}, class: "prefecture-select border-solid border-2 rounded" %>
         </div>
         <div class="form-group">
+          <%= f.label :comment %>
+          <%= f.text_field :comment, placeholder: "絶対合格するぞ！", class: 'form-control' %>
+        </div>
+        <div class="form-group">
           <%= f.label :user_image %>
           <%= f.file_field :user_image, class: 'form-control mb-3', accept: 'image/*' %>
           <%= f.hidden_field :user_image_cache %>

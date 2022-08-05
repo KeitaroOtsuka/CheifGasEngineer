@@ -13,11 +13,18 @@
       <br>
       <div class="w-2/5 mx-auto ">
         <% @user.groups.each do |group| %>
-          <p class="text-left"><span class="font-bold">所属グループ：</span><%= link_to group.name, group_path(group) %></p>
+          <p class="font-bold">所属グループ</p>
+          <p><%= link_to group.name, group_path(group) %></p>
         <% end %>
         <br>
-        <p class="text-left"><span class="font-bold">最近の試験結果：</span><span class="border-solid text-sky-500"><%= link_to '試験結果', result_user_path(@user) %></span></p>
+        <p class="font-bold">最近の試験結果</p>
+        <p class="border-solid text-sky-500"><%= link_to '試験結果', result_user_path(@user) %></p>
         <br>
+        <% if @user.comment %>
+          <p class="font-bold">ひとこと</p>
+          <div><%= @user.comment %></div>
+          <br>
+        <% end %>
         <% if current_user.id == @user.id %>
           <%= link_to '編集する', edit_user_path(@user), class:"btn btn-primary" %>
         <% end %>
