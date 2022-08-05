@@ -89,3 +89,7 @@ gem 'ransack'
 gem 'kaminari'
 
 gem "activerecord-import"
+
+# 管理画面
+gem 'rails_admin', '~> 2.0'
+gem 'cancancan'

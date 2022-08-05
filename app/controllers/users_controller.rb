@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
   before_action :set_users, only: %i[show edit update]
+  load_and_authorize_resource
 
   def new
     @user = User.new
