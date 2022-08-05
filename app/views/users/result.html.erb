@@ -36,6 +36,7 @@
             <p class="mt-2 text-black"><%= question_paper.question.sub_sentence5 %></p>
           <% end %>
           <br>
+          <%= render partial: 'answer', locals: { question: question_paper.question, question_paper: question_paper } %>
           <% if question_paper.judge == true %>
             <%= render partial: 'true', locals: { question: question_paper.question, question_paper: question_paper } %>
           <% elsif question_paper.judge == false %>
