@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
-  before_action :set_users, only: %i[show edit update]
+  before_action :set_users, only: %i[show edit update result]
 
   def new
     @user = User.new
@@ -16,7 +16,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    if  Paper.exists?(user_id: @user.id)
+      @paper = Paper.where(user_id: @user.id).order(id: "DESC").limit(1)
+    else
+      flash[:danger] = "試験結果が存在しません。"
+      redirect_back fallback_location: root_path
+    end
+  end
 
   def edit; end
 
@@ -30,7 +37,6 @@ class UsersController < ApplicationController
   end
 
   def result
-    @user = User.find(params[:id])
     if  Paper.exists?(user_id: @user.id)
       @paper = Paper.where(user_id: @user.id).order(id: "DESC").limit(1)
     else

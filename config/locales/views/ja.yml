@@ -42,3 +42,6 @@ ja:
     new:
       title: 'パスワード再設定用フォーム'
       send: '再設定用フォームを送る'
+  time:
+    formats:
+      default: "%Y/%m/%d"
