@@ -18,7 +18,7 @@
         <% end %>
         <br>
         <p class="font-bold">最近の試験結果</p>
-        <p class="border-solid text-sky-500"><%= link_to '試験結果', result_user_path(@user) %></p>
+        <p class="border-solid text-sky-500"><%= link_to '試験結果：' + (l @paper[0].updated_at), result_user_path(@user) %></p>
         <br>
         <% if @user.comment %>
           <p class="font-bold">ひとこと</p>
