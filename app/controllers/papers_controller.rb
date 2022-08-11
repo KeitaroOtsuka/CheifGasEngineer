@@ -44,7 +44,7 @@ class PapersController < ApplicationController
     elsif params[:exam_id1].to_i == 2
       @questions = Question.where(exam_id: 2).order("RANDOM()").limit(10)
     elsif params[:exam_id1].to_i == 3
-      @questions = Question.where(exam_id: 3).order("RANDOM()").limit(20)
+      @questions = Question.where(exam_id: 3).order("RANDOM()").limit(27)
     elsif params[:exam_id1].to_i == 4
       @questions = Question.where(exam_id: 4).order("RANDOM()").limit(16)
     elsif params[:exam_id1].to_i == 5
