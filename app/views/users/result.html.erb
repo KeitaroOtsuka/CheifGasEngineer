@@ -1,4 +1,6 @@
 <% @question_papers = QuestionPaper.where(paper_id: @paper.ids) %>
+<% @correct = QuestionPaper.where(paper_id: @paper.ids, judge: true) %>
+<div class = "text-center text-3xl my-2 py-2">正答率：<%= @correct.count %>/<%= @question_papers.count %></div>
 <% @question_papers.each do |question_paper| %>
   <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl mb-1">
     <div class="md:flex">
