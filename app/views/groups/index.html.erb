@@ -10,7 +10,7 @@
       </div>
     <% end %>
   </div>
-  <% if !current_user.groups.present? && current_user.kou? || current_user.admin? %>
+  <% if !current_user.groups.present? %>
       <%= link_to "グループ作成", new_group_path, class: "btn btn-primary" %>
   <% end %>
   <% if @groups.present? %>
