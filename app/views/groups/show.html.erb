@@ -27,7 +27,7 @@
         <% @group.users.each do |group_user| %>
         <div class="rounded border p-3 w-1/2 text-center px-4">
           <%= link_to group_user.decorate.full_name, user_path(group_user) %>
-          <% if current_user.admin? || current_user.id != group_user.id %>
+          <% if current_user.admin? || current_user.id == group_user.id %>
               <%= link_to "強制退会", withdrawal_member_group_path(user_id: group_user.id), method: :delete, class:"btn btn-danger text-sm", data: {confirm: "退会させますか？"} %>
           <% end %>
         </div>
