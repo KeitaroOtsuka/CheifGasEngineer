@@ -4,7 +4,9 @@
       <div class="p-8">
         <p class="text-xl font-normal">問.<%= i %></p>
         <br>
-        <div class="uppercase tracking-wide text-sm text-black font-semibold"><%= question_paper.question.sentence %></div>
+        <div class="uppercase tracking-wide text-sm text-black font-semibold">
+          <%= question_paper.question.sentence %>
+        </div>
         <% if question_paper.question.id == 92 %>
           <%= image_tag 'q_kou_r2_g10.png' %>
         <% elsif question_paper.question.id == 30 %>
@@ -16,161 +18,73 @@
         <% elsif question_paper.question.id == 18 %>
           <%= image_tag 'q_kou_r3_k5.png' %>
         <% end %>
-          <% if question_paper.question.sub_sentence %>
-            <p class="mt-2 text-black"><%= question_paper.question.sub_sentence %></p>
+        <% if question_paper.question.exception1.present? %>
+          <p class="mt-2 text-black"><%= question_paper.exception1 %></p>
+        <% end %>
+        <% if question_paper.question.exception2.present? %>
+          <p class="mt-2 text-black"><%= question_paper.exception2 %></p>
+        <% end %>
+        <% if question_paper.question.exception3.present? %>
+          <p class="mt-2 text-black"><%= question_paper.exception3 %></p>
+        <% end %>
+        <% if question_paper.question.exception4.present? %>
+          <p class="mt-2 text-black"><%= question_paper.exception4 %></p>
+        <% end %>
+        <% if question_paper.question.exception5.present? %>
+          <p class="mt-2 text-black"><%= question_paper.exception5 %></p>
+        <% end %>
+        <% if question_paper.question.id == 31 %>
+          <%= image_tag 'q_kou_r3_g10-2.png' %>
+        <% elsif question_paper.question.id == 197 %>
+          <%= image_tag 'q_otsu_r3_g10-2.png' %>
+        <% end %>
+        <div class="flex">
+          <% if question_paper.question.supplement1.present? %>
+            <p class="mt-2 text-black">(1)　<%= question_paper.question.supplement1 %></p>
           <% end %>
-          <% if question_paper.question.sub_sentence2 %>
-            <p class="mt-2 text-black"><%= question_paper.question.sub_sentence2 %></p>
+        </div>
+        <div class="flex">
+          <% if question_paper.question.supplement2.present? %>
+            <p class="mt-2 text-black">(2)　<%= question_paper.question.supplement2 %></p>
           <% end %>
-          <% if question_paper.question.id == 31 %>
-            <%= image_tag 'q_kou_r3_g10-2.png' %>
-          <% elsif question_paper.question.id == 197 %>
-            <%= image_tag 'q_otsu_r3_g10-2.png' %>
+        </div>
+        <div class="flex">
+          <% if question_paper.question.supplement3.present? %>
+            <p class="mt-2 text-black">(3)　<%= question_paper.question.supplement3 %></p>
           <% end %>
-          <% if question_paper.question.sub_sentence3 %>
-            <p class="mt-2 text-black"><%= question_paper.question.sub_sentence3 %></p>
+        </div>
+        <div class="flex">
+          <% if question_paper.question.supplement4.present? %>
+            <p class="mt-2 text-black">(4)　<%= question_paper.question.supplement4 %></p>
           <% end %>
-          <% if question_paper.question.sub_sentence4 %>
-            <p class="mt-2 text-black"><%= question_paper.question.sub_sentence4 %></p>
+        </div>
+        <div class="flex">
+          <% if question_paper.question.supplement5.present? %>
+            <p class="mt-2 text-black">(5)　<%= question_paper.question.supplement5 %></p>
           <% end %>
-          <div class="flex">
-            <% if question_paper.question.supplement1.present? %>
-              <% if question_paper.question.id == 121 %>
-                <p class="mt-2 text-black">(1)　</p>
-              <% elsif question_paper.question.exam_id == 2 %>
-                <p class="mt-2 text-black">(1)　</p>
-              <% elsif question_paper.question.exam_id == 5 %>
-                <p class="mt-2 text-black">(1)　</p>
-              <% elsif question_paper.question.exam_id == 8 %>
-                <p class="mt-2 text-black">(1)　</p>
-              <% elsif question_paper.question.exam_id == 11 %>
-                <p class="mt-2 text-black">(1)　</p>
-              <% elsif question_paper.question.exam_id == 1 %>
-                <p class="mt-2 text-black">(イ)　</p>
-              <% elsif question_paper.question.exam_id == 7 %>
-                <p class="mt-2 text-black">(イ)　</p>
-              <% elsif question_paper.question.exam_id == 9 %>
-                <p class="mt-2 text-black">(イ)　</p>
-              <% elsif question_paper.question.exam_id == 3 %>
-                <p class="mt-2 text-black">(イ)　</p>
-              <% end %>
-              <p class="mt-2 text-black">
-                <%= question_paper.question.supplement1 %>
-              </p>
-            <% end %>
-          </div>
-          <div class="flex">
-            <% if question_paper.question.supplement2.present? %>
-              <% if question_paper.question.id == 121 %>
-                <p class="mt-2 text-black">(2)　</p>
-              <% elsif question_paper.question.exam_id == 2 %>
-                <p class="mt-2 text-black">(2)　</p>
-              <% elsif question_paper.question.exam_id == 5 %>
-                <p class="mt-2 text-black">(2)　</p>
-              <% elsif question_paper.question.exam_id == 8 %>
-                <p class="mt-2 text-black">(2)　</p>
-              <% elsif question_paper.question.exam_id == 11 %>
-                <p class="mt-2 text-black">(2)　</p>
-              <% elsif question_paper.question.exam_id == 1 %>
-                <p class="mt-2 text-black">(ロ)　</p>
-              <% elsif question_paper.question.exam_id == 7 %>
-                <p class="mt-2 text-black">(ロ)　</p>
-              <% elsif question_paper.question.exam_id == 9 %>
-                <p class="mt-2 text-black">(ロ)　</p>
-              <% elsif question_paper.question.exam_id == 3 %>
-                <p class="mt-2 text-black">(ロ)　</p>
-              <% end %>
-              <p class="mt-2 text-black">
-                <%= question_paper.question.supplement2 %>
-              </p>
-            <% end %>
-          </div>
-          <div class="flex">
-            <% if question_paper.question.supplement3.present? %>
-              <% if question_paper.question.id == 121 %>
-                <p class="mt-2 text-black">(3)　</p>
-              <% elsif question_paper.question.exam_id == 2 %>
-                <p class="mt-2 text-black">(3)　</p>
-              <% elsif question_paper.question.exam_id == 5 %>
-                <p class="mt-2 text-black">(3)　</p>
-              <% elsif question_paper.question.exam_id == 8 %>
-                <p class="mt-2 text-black">(3)　</p>
-              <% elsif question_paper.question.exam_id == 11 %>
-                <p class="mt-2 text-black">(3)　</p>
-              <% elsif question_paper.question.exam_id == 1 %>
-                <p class="mt-2 text-black">(ハ)　</p>
-              <% elsif question_paper.question.exam_id == 7 %>
-                <p class="mt-2 text-black">(ハ)　</p>
-              <% elsif question_paper.question.exam_id == 9 %>
-                <p class="mt-2 text-black">(ハ)　</p>
-              <% elsif question_paper.question.exam_id == 3 %>
-                <p class="mt-2 text-black">(ハ)　</p>
-              <% end %>
-              <p class="mt-2 text-black">
-                <%= question_paper.question.supplement3 %>
-              </p>
-            <% end %>
-          </div>
-          <div class="flex">
-            <% if question_paper.question.supplement4.present? %>
-              <% if question_paper.question.id == 121 %>
-                <p class="mt-2 text-black">(4)　</p>
-              <% elsif question_paper.question.exam_id == 2 %>
-                <p class="mt-2 text-black">(4)　</p>
-              <% elsif question_paper.question.exam_id == 5 %>
-                <p class="mt-2 text-black">(4)　</p>
-              <% elsif question_paper.question.exam_id == 8 %>
-                <p class="mt-2 text-black">(4)　</p>
-              <% elsif question_paper.question.exam_id == 11 %>
-                <p class="mt-2 text-black">(4)　</p>
-              <% elsif question_paper.question.exam_id == 1 %>
-                <p class="mt-2 text-black">(ニ)　</p>
-              <% elsif question_paper.question.exam_id == 7 %>
-                <p class="mt-2 text-black">(ニ)　</p>
-              <% elsif question_paper.question.exam_id == 9 %>
-                <p class="mt-2 text-black">(ニ)　</p>
-              <% elsif question_paper.question.exam_id == 3 %>
-                <p class="mt-2 text-black">(ニ)　</p>
-              <% end %>
-              <p class="mt-2 text-black">
-                <%= question_paper.question.supplement4 %>
-              </p>
-            <% end %>
-          </div>
-          <div class="flex">
-            <% if question_paper.question.supplement5.present? %>
-              <% if question_paper.question.id == 121 %>
-                <p class="mt-2 text-black">(5)　</p>
-              <% elsif question_paper.question.exam_id == 2 %>
-                <p class="mt-2 text-black">(5)　</p>
-              <% elsif question_paper.question.exam_id == 5 %>
-                <p class="mt-2 text-black">(5)　</p>
-              <% elsif question_paper.question.exam_id == 8 %>
-                <p class="mt-2 text-black">(5)　</p>
-              <% elsif question_paper.question.exam_id == 11 %>
-                <p class="mt-2 text-black">(5)　</p>
-              <% elsif question_paper.question.exam_id == 1 %>
-                <p class="mt-2 text-black">(ホ)　</p>
-              <% elsif question_paper.question.exam_id == 7 %>
-                <p class="mt-2 text-black">(ホ)　</p>
-              <% elsif question_paper.question.exam_id == 9 %>
-                <p class="mt-2 text-black">(ホ)　</p>
-              <% elsif question_paper.question.exam_id == 3 %>
-                <p class="mt-2 text-black">(ホ)　</p>
-              <% end %>
-              <p class="mt-2 text-black">
-                <%= question_paper.question.supplement5 %>
-              </p>
-            <% end %>
-          </div>
-          <% if question_paper.question.sub_sentence5 %>
-            <p class="mt-2 text-black"><%= question_paper.question.sub_sentence5 %></p>
-          <% end %>
-          <br>
-          <%= render partial: 'answer', locals: { question: question_paper.question, question_paper: question_paper } %>
-          <div id="judge_<%= question_paper.id %>_<%= question_paper.question.id %>">
-            <%= render partial: 'question_papers/judge', locals: { question: question_paper.question, question_paper: question_paper } %>
-          </div>
+        </div>
+        <% if question_paper.question.sub_sentence.present? %>
+          <p class="mt-2 text-black">(イ)　<%= question_paper.question.sub_sentence %></p>
+        <% end %>
+        <% if question_paper.question.sub_sentence2.present? %>
+          <p class="mt-2 text-black">(ロ)　<%= question_paper.question.sub_sentence2 %></p>
+        <% end %>
+        <% if question_paper.question.sub_sentence3.present? %>
+          <p class="mt-2 text-black">(ハ)　<%= question_paper.question.sub_sentence3 %></p>
+        <% end %>
+        <% if question_paper.question.sub_sentence4.present? %>
+          <p class="mt-2 text-black">(ニ)　<%= question_paper.question.sub_sentence4 %></p>
+        <% end %>
+        <% if question_paper.question.sub_sentence5.present? %>
+          <p class="mt-2 text-black">(ホ)　<%= question_paper.question.sub_sentence5 %></p>
+        <% end %>
+        <% if question_paper.question.exception6.present? %>
+          <p class="mt-2 text-black"><%= question_paper.exception6 %></p>
+        <% end %>
+        <br>
+        <%= render partial: 'answer', locals: { question: question_paper.question, question_paper: question_paper } %>
+        <div id="judge_<%= question_paper.id %>_<%= question_paper.question.id %>">
+          <%= render partial: 'question_papers/judge', locals: { question: question_paper.question, question_paper: question_paper } %>
         </div>
       </div>
     </div>
