@@ -19,19 +19,19 @@
           <%= image_tag 'q_kou_r3_k5.png' %>
         <% end %>
         <% if question_paper.question.exception1.present? %>
-          <p class="mt-2 text-black"><%= question_paper.exception1 %></p>
+          <p class="mt-2 text-black"><%= question_paper.question.exception1 %></p>
         <% end %>
         <% if question_paper.question.exception2.present? %>
-          <p class="mt-2 text-black"><%= question_paper.exception2 %></p>
+          <p class="mt-2 text-black"><%= question_paper.question.exception2 %></p>
         <% end %>
         <% if question_paper.question.exception3.present? %>
-          <p class="mt-2 text-black"><%= question_paper.exception3 %></p>
+          <p class="mt-2 text-black"><%= question_paper.question.exception3 %></p>
         <% end %>
         <% if question_paper.question.exception4.present? %>
-          <p class="mt-2 text-black"><%= question_paper.exception4 %></p>
+          <p class="mt-2 text-black"><%= question_paper.question.exception4 %></p>
         <% end %>
         <% if question_paper.question.exception5.present? %>
-          <p class="mt-2 text-black"><%= question_paper.exception5 %></p>
+          <p class="mt-2 text-black"><%= question_paper.question.exception5 %></p>
         <% end %>
         <% if question_paper.question.id == 31 %>
           <%= image_tag 'q_kou_r3_g10-2.png' %>
@@ -79,7 +79,7 @@
           <p class="mt-2 text-black">(ホ)　<%= question_paper.question.sub_sentence5 %></p>
         <% end %>
         <% if question_paper.question.exception6.present? %>
-          <p class="mt-2 text-black"><%= question_paper.exception6 %></p>
+          <p class="mt-2 text-black"><%= question_paper.question.exception6 %></p>
         <% end %>
         <br>
         <%= render partial: 'answer', locals: { question: question_paper.question, question_paper: question_paper } %>
