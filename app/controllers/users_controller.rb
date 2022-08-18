@@ -17,12 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if  Paper.exists?(user_id: @user.id)
-      @paper = Paper.where(user_id: @user.id).order(id: "DESC").limit(1)
-    else
-      flash[:danger] = "試験結果が存在しません。"
-      redirect_back fallback_location: root_path
-    end
+    @paper = Paper.where(user_id: @user.id).order(id: "DESC").limit(1)
   end
 
   def edit; end
